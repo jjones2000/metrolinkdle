@@ -31,8 +31,23 @@ metrolinkdle/
 │   ├── index.html
 │   ├── vite.config.js       ← /api proxy to localhost:8000 in dev
 │   ├── .env.development
-│   └── .env.production      ← set VITE_API_URL to your Railway URL
+│   ├── .env.production      ← set VITE_API_URL to your Railway URL
+│   ├── public/
+│   │   ├── crescent-moon_1f319.png
+│   │   ├── doughnut_1f369.png
+│   │   ├── honeybee.png
+│   │   ├── large-green-circle_1f7e2.png
+│   │   ├── large-red-circle_1f534.png
+│   │   ├── large-yellow-circle_1f7e1.png
+│   │   ├── round-pushpin_1f4cd.png
+│   │   └── sun_2600-fe0f.png
 │
+├── metrolink_graph.json
+├── Metrolink_Lines_Functional.json
+├── Metrolink_Stops_Functional.json
+├── metrolinkdle.db
+├── README.md
+├── dev.sh
 └── build_graph.py           ← regenerates networkData.js + stops.json from TfGM GeoJSON
 ```
 

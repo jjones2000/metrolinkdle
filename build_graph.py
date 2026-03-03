@@ -290,7 +290,7 @@ def main():
         print(f"ERROR: {e}")
         print()
         print("Place both GeoJSON files next to this script, or pass --stops / --lines.")
-        print("Download from: https://data.gov.uk/dataset/55576216-9b4d-4e80-8b56-12c3b98e7d29")
+        print("Download from: https://www.data.gov.uk/dataset/55576216-cd1d-4e2b-adcf-c87c07473373/gm-metrolink-network")
         sys.exit(1)
 
     graph = result["graph"]
