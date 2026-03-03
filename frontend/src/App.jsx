@@ -11,6 +11,20 @@ import { STOPS, MAX_GUESSES, buildShareText } from './gameLogic'
 
 const APPLE_BEE_URL = "../public/honeybee.png";
 
+const MODE = {
+  SUN : "../public/sun_2600-fe0f.png",
+  MOON : "../public/crescent-moon_1f319.png"
+}
+
+// 2. Small helper component to keep the list clean
+const ModeIcon = ({ src }) => (
+  <img 
+    src={src} 
+    alt="mode" 
+    style={{ width: 18, height: 18, verticalAlign: 'middle', margin: '0 4px' }} 
+  />
+);
+
 // ─── Attempt pips ─────────────────────────────────────────────────────────────
 function AttemptPips({ total, used, isDarkMode }) {
   return (
@@ -51,7 +65,7 @@ function LoadingScreen({ error }) {
       alignItems: 'center', justifyContent: 'center', background: '#111', color: '#F5F5F5',
       fontFamily: "'DM Sans',sans-serif", gap: 16 }}>
       <div style={{ fontFamily: "'Bebas Neue',cursive", fontSize: 40, letterSpacing: 4, color: '#FFCC00' }}>
-        METRODLE
+        METROLINKDLE
       </div>
       {error ? <div style={{ color: '#EF4444' }}>{error}</div> : <div style={{ color: '#888' }}>Loading Bee Network...</div>}
     </div>
@@ -162,7 +176,7 @@ export default function App() {
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
             <img src={APPLE_BEE_URL} alt="Bee" style={{ width: 34, height: 34 }} />
             <span style={{ fontFamily: "'Bebas Neue',cursive", fontSize: 34, letterSpacing: 2, color: theme.text }}>
-              METRO<span style={{ color: '#FFCC00' }}>DLE</span>
+              METROLINK<span style={{ color: '#FFCC00' }}>DLE</span>
             </span>
           </div>
           <div style={{ display: 'flex', gap: 10 }}>
@@ -170,7 +184,7 @@ export default function App() {
                 background: theme.card, border: '2.5px solid #333', borderRadius: 10, width: 40, height: 40,
                 cursor: 'pointer', fontSize: 18, display: 'flex', alignItems: 'center', justifyContent: 'center',
                 boxShadow: '3px 3px 0 #333'
-              }}>{isDarkMode ? '☀️' : '🌙'}</button>
+              }}>{isDarkMode ? <ModeIcon src={MODE.SUN} /> : <ModeIcon src={MODE.MOON} />}</button>
             <button onClick={() => setShowHowTo(true)} style={{
                 background: theme.card, border: '2.5px solid #333', borderRadius: 10, width: 40, height: 40,
                 cursor: 'pointer', fontSize: 18, fontWeight: 900, boxShadow: '3px 3px 0 #333'
@@ -224,7 +238,7 @@ export default function App() {
           padding: '24px', textAlign: 'center', marginTop: 'auto' }}>
           <img src={APPLE_BEE_URL} alt="Bee" style={{ width: 24, height: 24, marginBottom: 8 }} />
           <p style={{ fontSize: 11, fontWeight: 700, color: '#333', letterSpacing: 0.5 }}>
-            Metrodle is a Bee Network Fan Project • Data © TfGM
+            Metrolinkdle is a Bee Network Fan Project • Data © TfGM
           </p>
         </footer>
       </div>

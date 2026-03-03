@@ -2,7 +2,7 @@
 build_graph.py
 ==============
 Builds the Manchester Metrolink network graph from official TfGM GeoJSON data
-and writes a JSON file suitable for use in Metrodle (or any other app).
+and writes a JSON file suitable for use in Metrolinkdle (or any other app).
 
 Data sources (Open Government Licence v3.0):
   Metrolink_Stops_Functional.json  — stop point features

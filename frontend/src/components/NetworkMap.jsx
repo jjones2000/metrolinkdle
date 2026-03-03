@@ -12,6 +12,10 @@ const LINE_ORDER = [
   'MediaCity Spur','Piccadilly Spur',
 ]
 
+const PIN_URL = "../public/round-pushpin_1f4cd.png";
+const CIRCLE_URL = "../public/doughnut_1f369.png";
+
+
 // ─── MapView ──────────────────────────────────────────────────────────────────
 //
 // Renders one map mode (geo or topo). The key architecture decision:
@@ -321,7 +325,22 @@ export function NetworkMap({ guesses, targetStop, revealTarget, isDarkMode }) {
             padding: 2,
             gap: 2,
           }}>
-            {[['geo', '📍 Geographic'], ['topo', '🗓 Topological']].map(([m, label]) => (
+            {[
+  [
+    'geo', 
+    <>
+      <img src={PIN_URL} alt="Pin" style={{ width: 16, height: 16, marginBottom: 4, verticalAlign: 'middle' }} />
+      <span> Geographic</span>
+    </>
+  ],
+  [
+    'topo', 
+    <>
+      <img src={CIRCLE_URL} alt="Topological" style={{ width: 16, height: 16, marginBottom: 4, verticalAlign: 'middle' }} />
+      <span> Topological</span>
+    </>
+  ]
+].map(([m, label]) => (
               <button
                 key={m}
                 onClick={() => setMode(m)}

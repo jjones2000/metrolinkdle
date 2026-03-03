@@ -7,13 +7,13 @@ NC='\033[0m'
 
 # Function to kill both processes on exit
 cleanup() {
-    echo -e "\n${BLUE}🛑 Stopping Metrodle...${NC}"
+    echo -e "\n${BLUE}🛑 Stopping Metrolinkdle...${NC}"
     kill $BACKEND_PID $FRONTEND_PID
     exit
 }
 trap cleanup SIGINT SIGTERM
 
-echo -e "${GREEN}🐝 Starting Metrodle Local Development Environment${NC}"
+echo -e "${GREEN}🐝 Starting Metrolinkdle Local Development Environment${NC}"
 
 # --- 2. BACKEND SETUP ---
 echo -e "${BLUE}🐍 Setting up Backend (FastAPI)...${NC}"

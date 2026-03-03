@@ -10,7 +10,7 @@
 import { useState, useEffect } from 'react'
 import { fetchDailyStop } from '../api'
 
-const CACHE_KEY = 'metrodle_daily_cache'
+const CACHE_KEY = 'metrolinkdle_daily_cache'
 
 function getCached() {
   try {

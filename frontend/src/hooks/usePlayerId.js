@@ -21,10 +21,10 @@ function generateId() {
 
 export function usePlayerId() {
   const [playerId] = useState(() => {
-    const stored = localStorage.getItem('metrodle_player_id')
+    const stored = localStorage.getItem('metrolinkdle_player_id')
     if (stored) return stored
     const newId = generateId()
-    localStorage.setItem('metrodle_player_id', newId)
+    localStorage.setItem('metrolinkdle_player_id', newId)
     return newId
   })
   return playerId

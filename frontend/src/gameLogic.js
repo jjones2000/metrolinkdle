@@ -1,7 +1,7 @@
 /**
  * gameLogic.js
  * ------------
- * Pure functions for all Metrodle game logic.
+ * Pure functions for all Metrolinkdle game logic.
  * No React dependencies — easy to unit-test independently.
  */
 
@@ -121,7 +121,7 @@ export function buildShareText(guesses, targetStop, won) {
       STATUS_EMOJI[ev.zoneStatus],
     ].join('')
   })
-  return [`Metrodle ${score}`, ...rows, 'https://metrodle.app'].join('\n')
+  return [`Metrolinkdle ${score}`, ...rows, 'https://metrolinkdle.app'].join('\n')
 }
 
 

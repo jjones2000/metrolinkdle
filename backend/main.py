@@ -1,5 +1,5 @@
 """
-Metrodle — FastAPI Backend
+Metrolinkdle — FastAPI Backend
 ==========================
 Responsibilities:
   - GET  /api/daily          → today's target stop (deterministic, date-seeded)
@@ -28,7 +28,7 @@ from pydantic import BaseModel, Field
 # Railway: mount a volume at /data for persistence.
 # Locally: falls back to ./data/
 DATA_DIR = Path(os.getenv("DATA_DIR", "./data"))
-DB_PATH  = DATA_DIR / "metrodle.db"
+DB_PATH  = DATA_DIR / "metrolinkdle.db"
 
 # Comma-separated list of allowed origins — set in Railway env vars.
 # Locally defaults to Vite dev server.
@@ -112,8 +112,8 @@ async def lifespan(app: FastAPI):
 # ─── App ──────────────────────────────────────────────────────────────────────
 
 app = FastAPI(
-    title="Metrodle API",
-    description="Backend for Metrodle — Manchester Metrolink Wordle",
+    title="Metrolinkdle API",
+    description="Backend for Metrolinkdle — Manchester Metrolink Wordle",
     version="1.0.0",
     lifespan=lifespan,
 )
