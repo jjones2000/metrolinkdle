@@ -14,6 +14,7 @@ const LINE_ORDER = [
 
 const PIN_URL = "../public/round-pushpin_1f4cd.png";
 const CIRCLE_URL = "../public/doughnut_1f369.png";
+const BEE_URL = "../public/honeybee.png"
 
 
 // ─── MapView ──────────────────────────────────────────────────────────────────
@@ -314,7 +315,7 @@ export function NetworkMap({ guesses, targetStop, revealTarget, isDarkMode }) {
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
           <span style={{ fontFamily: "'Bebas Neue',cursive", fontSize: 15, letterSpacing: 2, color: '#FFCC00' }}>
-            🗺 Network Map
+          <img src={BEE_URL} alt="Bee" style={{ width: 12, height: 12 }} /> Network Map
           </span>
 
           {/* Geo / Topo toggle */}

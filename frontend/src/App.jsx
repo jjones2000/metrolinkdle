@@ -188,7 +188,7 @@ export default function App() {
             <button onClick={() => setShowHowTo(true)} style={{
                 background: theme.card, border: '2.5px solid #333', borderRadius: 10, width: 40, height: 40,
                 cursor: 'pointer', fontSize: 18, fontWeight: 900, boxShadow: '3px 3px 0 #333'
-              }}>?</button>
+              }}>❓</button>
           </div>
         </header>
 
@@ -205,7 +205,7 @@ export default function App() {
           {!gameOver && (
             <div style={{ width: '100%', display: 'flex', flexDirection: 'column', gap: 8 }}>
               <p style={{ fontSize: 11, fontWeight: 800, color: theme.subtext, textAlign: 'center', textTransform: 'uppercase', letterSpacing: 1.5 }}>
-                Tap a station to guess
+                Start typing to guess today's station
               </p>
               <StopSearch 
                 onSelect={handleSelectStop} 
