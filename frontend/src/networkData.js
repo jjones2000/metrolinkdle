@@ -13,7 +13,7 @@ export const TOPO_STOPS = {
   'Market Street': {'topoX': 0, 'topoY': 0}, 
   'Piccadilly Gardens': {'topoX': 0, 'topoY': 0}, 
   'Piccadilly': {'topoX': 0, 'topoY': 0}, 
-  'Deansgate-Castlefield': {'topoX': 0, 'topoY': 0}, 
+  'Deansgate-Castlefield': {'topoX': -22, 'topoY': -12}, 
   'Pomona': {'topoX': -32, 'topoY': -14}, 
   'Trafford Bar': {'topoX': 0, 'topoY': 0}, 
   'Shudehill': {'topoX': 0, 'topoY': 0}, 
@@ -52,7 +52,7 @@ export const TOPO_STOPS = {
   'Failsworth': {'topoX': 0, 'topoY': 0}, 
   'Hollinwood': {'topoX': 0, 'topoY': 0}, 
   'South Chadderton': {'topoX': 0, 'topoY': 0}, 
-  'Cornbrook': {'topoX': 0, 'topoY': 0}, 
+  'Cornbrook': {'topoX': -27, 'topoY': -12}, 
   'Abraham Moss': {'topoX': 0, 'topoY': 0}, 
   'Dane Road': {'topoX': 0, 'topoY': 0}, 
   'Sale': {'topoX': 0, 'topoY': 0}, 
@@ -99,7 +99,7 @@ export const TOPO_STOPS = {
   'Village': {'topoX': 0, 'topoY': 0}, 
   'Parkway': {'topoX': 0, 'topoY': 0}, 
   'Barton Dock Road': {'topoX': 0, 'topoY': 0}, 
-  "St Peter's Square": {'topoX': 0, 'topoY': 0}
+  "St Peter's Square": {'topoX': -16, 'topoY': -12}
 }
 
 export const NET = {"stops": {
@@ -1278,7 +1278,7 @@ export const NET = {"stops": {
 "lineColors":{"red": "#f00303ff", "light-blue":"#00eaffff", "yellow":"#F9A100", "purple":"#8316f0ff","blue":"#0336f0ff","pink":"#ec07cdff","Second City Crossing":"#888888","MediaCity Spur":"#3C8BC4","Piccadilly Spur":"#888888", "green": "#1c4305ff"},
 "bounds":{"minLat":53.3653594952,"maxLat":53.6173341878,"minLng":-2.3477940921,"maxLng":-2.0895481845},
 "topoPaths":[
-{"line":"light-blue","color":"#00eaffff","coords":[[-77,-38], [-56,-38], [-54,-36], [-30,-12], [-14,-12], [6,8], [8,10],[70,12]]},
-{"line":"light-blue","color":"#00eaffff","coords":[[-56,-32], [-50,-32]]},
+{"line":"light-blue","color":"#00eaffff","coords":[[-77,-38], [-56,-38], [-54,-36], [-30,-12], [-12,-12], [8,12], [10,12],[70,12]]},
+{"line":"light-blue","color":"#00eaffff","coords":[[-56,-32], [-50,-32]]}
 ],
-"topoBounds":{"minX":-52,"maxX":70,"minY":-47,"maxY":88}};
+"topoBounds":{"minX":-80,"maxX":70,"minY":-47,"maxY":47}};

@@ -12,9 +12,9 @@ const LINE_ORDER = [
   'MediaCity Spur','Piccadilly Spur',
 ]
 
-const PIN_URL = "../public/round-pushpin_1f4cd.png";
-const CIRCLE_URL = "../public/doughnut_1f369.png";
-const BEE_URL = "../public/honeybee.png"
+const PIN_URL = "./round-pushpin_1f4cd.png";
+const CIRCLE_URL = "./doughnut_1f369.png";
+const BEE_URL = "./honeybee.png"
 
 
 // ─── MapView ──────────────────────────────────────────────────────────────────
