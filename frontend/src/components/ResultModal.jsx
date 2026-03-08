@@ -1,7 +1,19 @@
 import { LINE_COLORS, MAX_GUESSES } from '../gameLogic'
 
 const WIN_LABELS = ['GENIUS!','EXCELLENT','GREAT','GOOD','NOT BAD','PHEW!','LUCKY','GOT IT!']
-const WIN_EMOJI  = ['🎉','🏆','⭐','🌟','✨','💫','🎊','🎯']
+const WIN_EMOJI_IMGS = [
+  { emoji: '🎉', url: 'party-popper_1f389.png' },
+  { emoji: '🏆', url: 'trophy_1f3c6.png' },
+  { emoji: '⭐', url: 'star_2b50.png' },
+  { emoji: '🌟', url: 'glowing-star_1f31f.png' },
+  { emoji: '✨', url: 'sparkles_2728.png' },
+  { emoji: '💫', url: 'dizzy_1f4ab.png' },
+  { emoji: '🎊', url: 'confetti-ball_1f38a.png' },
+  { emoji: '🎯', url: 'direct-hit_1f3af.png' },
+];
+
+const SAD_URL = "pensive-face_1f614.png";
+
 
 function StatBox({ value, label }) {
   return (
@@ -32,8 +44,7 @@ function DistBar({ n, label, max, highlight }) {
 
 export function ResultModal({ won, guesses, targetStop, stats, onClose, onShare, onPlayAgain }) {
   const n     = guesses.length
-  const emoji = won ? WIN_EMOJI[n - 1]  : '😔'
-  const title = won ? WIN_LABELS[n - 1] : 'BETTER LUCK NEXT TIME'
+  const emoji = won ? <img src={WIN_EMOJI_IMGS[n - 1].url} alt={WIN_EMOJI_IMGS[n - 1].emoji} height={48}/> : <img src={SAD_URL} alt="😔" height={48}/>;  const title = won ? WIN_LABELS[n - 1] : 'BETTER LUCK NEXT TIME'
   const dist  = stats?.guess_distribution || {}
   const maxDist = Math.max(...Object.values(dist).map(Number), 1)
 

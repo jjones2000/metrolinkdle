@@ -7,7 +7,8 @@
       "lat": 53.5305052393,
       "lng": -2.2672470445,
       "lines": [
-        "Bury"
+        "yellow",
+        "green"
       ]
     },
     "Bowker Vale": {
@@ -17,7 +18,8 @@
       "lat": 53.5248928945,
       "lng": -2.2498954101,
       "lines": [
-        "Bury"
+        "yellow",
+        "green"
       ]
     },
     "Crumpsall": {
@@ -27,7 +29,8 @@
       "lat": 53.5172931833,
       "lng": -2.2410447161,
       "lines": [
-        "Bury"
+        "yellow",
+        "green"
       ]
     },
     "Bury": {
@@ -37,7 +40,8 @@
       "lat": 53.590958632,
       "lng": -2.2970957346,
       "lines": [
-        "Bury"
+        "yellow",
+        "green"
       ]
     },
     "Radcliffe": {
@@ -47,7 +51,8 @@
       "lat": 53.5623899316,
       "lng": -2.3210307459,
       "lines": [
-        "Bury"
+        "yellow",
+        "green"
       ]
     },
     "Whitefield": {
@@ -57,7 +62,8 @@
       "lat": 53.5512115751,
       "lng": -2.2952051111,
       "lines": [
-        "Bury"
+        "yellow",
+        "green"
       ]
     },
     "Besses o' th' Barn": {
@@ -67,7 +73,8 @@
       "lat": 53.5420651307,
       "lng": -2.2861234691,
       "lines": [
-        "Bury"
+        "yellow",
+        "green"
       ]
     },
     "Prestwich": {
@@ -77,7 +84,8 @@
       "lat": 53.5333182757,
       "lng": -2.2819023349,
       "lines": [
-        "Bury"
+        "yellow",
+        "green"
       ]
     },
     "Victoria": {
@@ -87,9 +95,9 @@
       "lat": 53.4877421261,
       "lng": -2.2417174125,
       "lines": [
-        "Bury",
-        "Piccadilly Spur",
-        "Second City Crossing"
+        "yellow",
+        "green",
+        "blue"
       ]
     },
     "Market Street": {
@@ -99,9 +107,9 @@
       "lat": 53.4819375024,
       "lng": -2.238836318,
       "lines": [
-        "Bury",
-        "Piccadilly Spur",
-        "Second City Crossing"
+        "yellow",
+        "green",
+        "blue"
       ]
     },
     "Piccadilly Gardens": {
@@ -111,10 +119,9 @@
       "lat": 53.4802724384,
       "lng": -2.236987811,
       "lines": [
-        "Bury",
-        "Droylsden",
-        "Piccadilly Spur",
-        "Second City Crossing"
+        "yellow",
+        "purple",
+        "light-blue"
       ]
     },
     "Piccadilly": {
@@ -124,8 +131,9 @@
       "lat": 53.4770298302,
       "lng": -2.2304092919,
       "lines": [
-        "Droylsden",
-        "Piccadilly Spur"
+        "yellow",
+        "purple",
+        "light-blue"
       ]
     },
     "Deansgate-Castlefield": {
@@ -135,9 +143,12 @@
       "lat": 53.4747237826,
       "lng": -2.2503454594,
       "lines": [
-        "Altrincham",
-        "Bury",
-        "Second City Crossing"
+        "red",
+        "light-blue",
+        "purple",
+        "green",
+        "blue",
+        "pink"
       ]
     },
     "Pomona": {
@@ -147,10 +158,8 @@
       "lat": 53.4651935124,
       "lng": -2.2780294948,
       "lines": [
-        "Altrincham",
-        "Chorlton",
-        "Eccles",
-        "Trafford"
+        "red",
+        "light-blue"
       ]
     },
     "Trafford Bar": {
@@ -160,10 +169,10 @@
       "lat": 53.4617587999,
       "lng": -2.2772539486,
       "lines": [
-        "Altrincham",
-        "Chorlton",
-        "Eccles",
-        "Trafford"
+        "purple",
+        "green",
+        "blue",
+        "pink"
       ]
     },
     "Shudehill": {
@@ -173,9 +182,9 @@
       "lat": 53.4852776589,
       "lng": -2.2391066292,
       "lines": [
-        "Bury",
-        "Piccadilly Spur",
-        "Second City Crossing"
+        "yellow",
+        "green",
+        "blue"
       ]
     },
     "Firswood": {
@@ -185,7 +194,8 @@
       "lat": 53.4512107555,
       "lng": -2.2776764321,
       "lines": [
-        "Chorlton"
+        "blue",
+        "pink"
       ]
     },
     "Chorlton": {
@@ -195,7 +205,8 @@
       "lat": 53.4428250722,
       "lng": -2.2735081151,
       "lines": [
-        "Chorlton"
+        "blue",
+        "pink"
       ]
     },
     "St Werburgh's Road": {
@@ -205,9 +216,8 @@
       "lat": 53.4388412989,
       "lng": -2.2657145447,
       "lines": [
-        "Chorlton",
-        "East Didsbury",
-        "Manchester Airport"
+        "blue",
+        "pink"
       ]
     },
     "Sale Water Park": {
@@ -217,7 +227,7 @@
       "lat": 53.4282433092,
       "lng": -2.2908313313,
       "lines": [
-        "Manchester Airport"
+        "blue"
       ]
     },
     "Northern Moor": {
@@ -227,7 +237,7 @@
       "lat": 53.4145544826,
       "lng": -2.2881513123,
       "lines": [
-        "Manchester Airport"
+        "blue"
       ]
     },
     "Wythenshawe Park": {
@@ -237,7 +247,7 @@
       "lat": 53.4077357466,
       "lng": -2.2956997904,
       "lines": [
-        "Manchester Airport"
+        "blue"
       ]
     },
     "Moor Road": {
@@ -247,7 +257,7 @@
       "lat": 53.4033107222,
       "lng": -2.2951582047,
       "lines": [
-        "Manchester Airport"
+        "blue"
       ]
     },
     "Baguley": {
@@ -257,7 +267,7 @@
       "lat": 53.3968492434,
       "lng": -2.2926735303,
       "lines": [
-        "Manchester Airport"
+        "blue"
       ]
     },
     "Roundthorn": {
@@ -267,7 +277,7 @@
       "lat": 53.3926441504,
       "lng": -2.2891721972,
       "lines": [
-        "Manchester Airport"
+        "blue"
       ]
     },
     "Martinscroft": {
@@ -277,7 +287,7 @@
       "lat": 53.3918700253,
       "lng": -2.2797792265,
       "lines": [
-        "Manchester Airport"
+        "blue"
       ]
     },
     "Benchill": {
@@ -287,7 +297,7 @@
       "lat": 53.3872398523,
       "lng": -2.2562153902,
       "lines": [
-        "Manchester Airport"
+        "blue"
       ]
     },
     "Crossacres": {
@@ -297,7 +307,7 @@
       "lat": 53.3833174666,
       "lng": -2.2562644211,
       "lines": [
-        "Manchester Airport"
+        "blue"
       ]
     },
     "Robinswood Road": {
@@ -307,7 +317,7 @@
       "lat": 53.3763956977,
       "lng": -2.2586906852,
       "lines": [
-        "Manchester Airport"
+        "blue"
       ]
     },
     "Peel Hall": {
@@ -317,7 +327,7 @@
       "lat": 53.3737132444,
       "lng": -2.2503949954,
       "lines": [
-        "Manchester Airport"
+        "blue"
       ]
     },
     "Shadowmoss": {
@@ -327,7 +337,7 @@
       "lat": 53.3679619667,
       "lng": -2.2524452592,
       "lines": [
-        "Manchester Airport"
+        "blue"
       ]
     },
     "Manchester Airport": {
@@ -337,7 +347,7 @@
       "lat": 53.3653594952,
       "lng": -2.2722561498,
       "lines": [
-        "Manchester Airport"
+        "blue"
       ]
     },
     "New Islington": {
@@ -347,7 +357,7 @@
       "lat": 53.4810493679,
       "lng": -2.2198151131,
       "lines": [
-        "Droylsden"
+        "light-blue"
       ]
     },
     "Holt Town": {
@@ -357,7 +367,7 @@
       "lat": 53.4832805049,
       "lng": -2.2120629808,
       "lines": [
-        "Droylsden"
+        "light-blue"
       ]
     },
     "Etihad Campus": {
@@ -367,7 +377,7 @@
       "lat": 53.48537388,
       "lng": -2.2013834129,
       "lines": [
-        "Droylsden"
+        "light-blue"
       ]
     },
     "Velopark": {
@@ -377,7 +387,7 @@
       "lat": 53.4822885127,
       "lng": -2.1930154769,
       "lines": [
-        "Droylsden"
+        "light-blue"
       ]
     },
     "Clayton Hall": {
@@ -387,7 +397,7 @@
       "lat": 53.4827941592,
       "lng": -2.1823514852,
       "lines": [
-        "Droylsden"
+        "light-blue"
       ]
     },
     "Edge Lane": {
@@ -397,7 +407,7 @@
       "lat": 53.4808853353,
       "lng": -2.1652927417,
       "lines": [
-        "Droylsden"
+        "light-blue"
       ]
     },
     "Cemetery Road": {
@@ -407,7 +417,7 @@
       "lat": 53.4798803727,
       "lng": -2.1550048902,
       "lines": [
-        "Droylsden"
+        "light-blue"
       ]
     },
     "Droylsden": {
@@ -417,8 +427,7 @@
       "lat": 53.4794704547,
       "lng": -2.1446657345,
       "lines": [
-        "Ashton",
-        "Droylsden"
+        "light-blue"
       ]
     },
     "Audenshaw": {
@@ -428,7 +437,7 @@
       "lat": 53.4782093022,
       "lng": -2.1309653768,
       "lines": [
-        "Ashton"
+        "light-blue"
       ]
     },
     "Ashton Moss": {
@@ -438,7 +447,7 @@
       "lat": 53.4836767552,
       "lng": -2.1219229142,
       "lines": [
-        "Ashton"
+        "light-blue"
       ]
     },
     "Ashton West": {
@@ -448,7 +457,7 @@
       "lat": 53.490250128,
       "lng": -2.109721205,
       "lines": [
-        "Ashton"
+        "light-blue"
       ]
     },
     "Ashton-under-Lyne": {
@@ -458,7 +467,7 @@
       "lat": 53.4903504854,
       "lng": -2.0980345788,
       "lines": [
-        "Ashton"
+        "light-blue"
       ]
     },
     "Queens Road": {
@@ -468,8 +477,8 @@
       "lat": 53.5016807825,
       "lng": -2.2266494916,
       "lines": [
-        "Bury",
-        "Oldham and Rochdale"
+        "yellow",
+        "green"
       ]
     },
     "Monsall": {
@@ -479,7 +488,7 @@
       "lat": 53.501096583,
       "lng": -2.2106544254,
       "lines": [
-        "Oldham and Rochdale"
+        "pink"
       ]
     },
     "Central Park": {
@@ -489,7 +498,7 @@
       "lat": 53.5015926359,
       "lng": -2.1991400887,
       "lines": [
-        "Oldham and Rochdale"
+        "pink"
       ]
     },
     "Newton Heath and Moston": {
@@ -499,7 +508,7 @@
       "lat": 53.5042267329,
       "lng": -2.1837232589,
       "lines": [
-        "Oldham and Rochdale"
+        "pink"
       ]
     },
     "Failsworth": {
@@ -509,7 +518,7 @@
       "lat": 53.5106281642,
       "lng": -2.1629235996,
       "lines": [
-        "Oldham and Rochdale"
+        "pink"
       ]
     },
     "Hollinwood": {
@@ -519,7 +528,7 @@
       "lat": 53.5199984264,
       "lng": -2.1473264614,
       "lines": [
-        "Oldham and Rochdale"
+        "pink"
       ]
     },
     "South Chadderton": {
@@ -529,7 +538,7 @@
       "lat": 53.5267187383,
       "lng": -2.1451820867,
       "lines": [
-        "Oldham and Rochdale"
+        "pink"
       ]
     },
     "Cornbrook": {
@@ -539,8 +548,12 @@
       "lat": 53.4700194787,
       "lng": -2.2675495027,
       "lines": [
-        "Altrincham",
-        "Eccles"
+        "red",
+        "light-blue",
+        "purple",
+        "green",
+        "blue",
+        "pink"
       ]
     },
     "Abraham Moss": {
@@ -550,7 +563,8 @@
       "lat": 53.5106676302,
       "lng": -2.2357186392,
       "lines": [
-        "Bury"
+        "green",
+        "yellow"
       ]
     },
     "Dane Road": {
@@ -560,7 +574,8 @@
       "lat": 53.4300039735,
       "lng": -2.3116614149,
       "lines": [
-        "Altrincham"
+        "purple",
+        "green"
       ]
     },
     "Sale": {
@@ -570,7 +585,8 @@
       "lat": 53.4241853331,
       "lng": -2.3191394411,
       "lines": [
-        "Altrincham"
+        "purple",
+        "green"
       ]
     },
     "Brooklands": {
@@ -580,7 +596,8 @@
       "lat": 53.4170730157,
       "lng": -2.3260595267,
       "lines": [
-        "Altrincham"
+        "purple",
+        "green"
       ]
     },
     "Timperley": {
@@ -590,7 +607,8 @@
       "lat": 53.4042544039,
       "lng": -2.3384036505,
       "lines": [
-        "Altrincham"
+        "purple",
+        "green"
       ]
     },
     "Navigation Road": {
@@ -600,7 +618,8 @@
       "lat": 53.3957955321,
       "lng": -2.3433163641,
       "lines": [
-        "Altrincham"
+        "purple",
+        "green"
       ]
     },
     "Altrincham": {
@@ -610,7 +629,8 @@
       "lat": 53.3872091274,
       "lng": -2.3475158907,
       "lines": [
-        "Altrincham"
+        "purple",
+        "green"
       ]
     },
     "Eccles": {
@@ -620,7 +640,7 @@
       "lat": 53.4829836037,
       "lng": -2.3351657527,
       "lines": [
-        "Eccles"
+        "light-blue"
       ]
     },
     "Ladywell": {
@@ -630,7 +650,7 @@
       "lat": 53.4839997121,
       "lng": -2.3266550151,
       "lines": [
-        "Eccles"
+        "light-blue"
       ]
     },
     "Salford Quays": {
@@ -640,8 +660,7 @@
       "lat": 53.4704131132,
       "lng": -2.2839674299,
       "lines": [
-        "Eccles",
-        "Trafford"
+        "light-blue"
       ]
     },
     "Exchange Quay": {
@@ -651,10 +670,7 @@
       "lat": 53.4676986039,
       "lng": -2.2823433015,
       "lines": [
-        "Altrincham",
-        "Chorlton",
-        "Eccles",
-        "Trafford"
+        "light-blue"
       ]
     },
     "Harbour City": {
@@ -664,9 +680,7 @@
       "lat": 53.4741850056,
       "lng": -2.2906199446,
       "lines": [
-        "Eccles",
-        "MediaCity Spur",
-        "Trafford"
+        "light-blue"
       ]
     },
     "Anchorage": {
@@ -676,8 +690,7 @@
       "lat": 53.4743378737,
       "lng": -2.2860274637,
       "lines": [
-        "Eccles",
-        "MediaCity Spur"
+        "light-blue"
       ]
     },
     "Broadway": {
@@ -687,9 +700,7 @@
       "lat": 53.4747951082,
       "lng": -2.2949315704,
       "lines": [
-        "Eccles",
-        "MediaCity Spur",
-        "Trafford"
+        "light-blue"
       ]
     },
     "Langworthy": {
@@ -699,8 +710,7 @@
       "lat": 53.4806439282,
       "lng": -2.2961628569,
       "lines": [
-        "Eccles",
-        "MediaCity Spur"
+        "light-blue"
       ]
     },
     "Weaste": {
@@ -710,7 +720,7 @@
       "lat": 53.4824216266,
       "lng": -2.3075148627,
       "lines": [
-        "Eccles"
+        "light-blue"
       ]
     },
     "Old Trafford": {
@@ -720,8 +730,8 @@
       "lat": 53.4560743794,
       "lng": -2.2850068072,
       "lines": [
-        "Altrincham",
-        "Chorlton"
+        "purple",
+        "green"
       ]
     },
     "Stretford": {
@@ -731,7 +741,8 @@
       "lat": 53.4460264212,
       "lng": -2.3038078823,
       "lines": [
-        "Altrincham"
+        "purple",
+        "green"
       ]
     },
     "MediaCityUK": {
@@ -741,9 +752,7 @@
       "lat": 53.4721717265,
       "lng": -2.2971112068,
       "lines": [
-        "Eccles",
-        "MediaCity Spur",
-        "Trafford"
+        "light-blue"
       ]
     },
     "Freehold": {
@@ -753,7 +762,7 @@
       "lat": 53.5376871081,
       "lng": -2.1380277899,
       "lines": [
-        "Oldham and Rochdale"
+        "pink"
       ]
     },
     "Oldham King Street": {
@@ -763,7 +772,7 @@
       "lat": 53.5395711032,
       "lng": -2.1174322118,
       "lines": [
-        "Oldham Town Centre"
+        "pink"
       ]
     },
     "Oldham Central": {
@@ -773,7 +782,7 @@
       "lat": 53.5403139516,
       "lng": -2.1121345029,
       "lines": [
-        "Oldham Town Centre"
+        "pink"
       ]
     },
     "Oldham Mumps": {
@@ -783,8 +792,7 @@
       "lat": 53.5424034135,
       "lng": -2.103459906,
       "lines": [
-        "Oldham Town Centre",
-        "Oldham and Rochdale"
+        "pink"
       ]
     },
     "Derker": {
@@ -794,8 +802,7 @@
       "lat": 53.5498235973,
       "lng": -2.1016186463,
       "lines": [
-        "Oldham Town Centre",
-        "Oldham and Rochdale"
+        "pink"
       ]
     },
     "Shaw and Crompton": {
@@ -805,7 +812,7 @@
       "lat": 53.5761674215,
       "lng": -2.0895481845,
       "lines": [
-        "Oldham and Rochdale"
+        "pink"
       ]
     },
     "Newhey": {
@@ -815,7 +822,7 @@
       "lat": 53.6008299984,
       "lng": -2.0946585416,
       "lines": [
-        "Oldham and Rochdale"
+        "pink"
       ]
     },
     "Milnrow": {
@@ -825,7 +832,7 @@
       "lat": 53.608122029,
       "lng": -2.112073856,
       "lines": [
-        "Oldham and Rochdale"
+        "pink"
       ]
     },
     "Kingsway Business Park": {
@@ -835,7 +842,7 @@
       "lat": 53.6110951947,
       "lng": -2.1237052529,
       "lines": [
-        "Oldham and Rochdale"
+        "pink"
       ]
     },
     "Newbold": {
@@ -845,7 +852,7 @@
       "lat": 53.613394931,
       "lng": -2.1354992055,
       "lines": [
-        "Oldham and Rochdale"
+        "pink"
       ]
     },
     "Rochdale Railway Station": {
@@ -855,8 +862,7 @@
       "lat": 53.6110247492,
       "lng": -2.1544526694,
       "lines": [
-        "Oldham and Rochdale",
-        "Rochdale Town Centre"
+        "pink"
       ]
     },
     "Rochdale Town Centre": {
@@ -866,8 +872,7 @@
       "lat": 53.6173341878,
       "lng": -2.1553798789,
       "lines": [
-        "Oldham and Rochdale",
-        "Rochdale Town Centre"
+        "pink"
       ]
     },
     "Barlow Moor Road": {
@@ -877,9 +882,7 @@
       "lat": 53.4328481051,
       "lng": -2.269276432,
       "lines": [
-        "Chorlton",
-        "East Didsbury",
-        "Manchester Airport"
+        "blue"
       ]
     },
     "Withington": {
@@ -889,7 +892,7 @@
       "lat": 53.4327822155,
       "lng": -2.2493378112,
       "lines": [
-        "East Didsbury"
+        "pink"
       ]
     },
     "Burton Road": {
@@ -899,7 +902,7 @@
       "lat": 53.4291721195,
       "lng": -2.2406360726,
       "lines": [
-        "East Didsbury"
+        "pink"
       ]
     },
     "West Didsbury": {
@@ -909,7 +912,7 @@
       "lat": 53.424467407,
       "lng": -2.2360528894,
       "lines": [
-        "East Didsbury"
+        "pink"
       ]
     },
     "Didsbury Village": {
@@ -919,7 +922,7 @@
       "lat": 53.4167534695,
       "lng": -2.2285999437,
       "lines": [
-        "East Didsbury"
+        "pink"
       ]
     },
     "East Didsbury": {
@@ -929,7 +932,7 @@
       "lat": 53.4120746108,
       "lng": -2.2172659574,
       "lines": [
-        "East Didsbury"
+        "pink"
       ]
     },
     "Wythenshawe Town Centre": {
@@ -939,7 +942,7 @@
       "lat": 53.3800462057,
       "lng": -2.2637514069,
       "lines": [
-        "Manchester Airport"
+        "blue"
       ]
     },
     "Westwood": {
@@ -949,8 +952,7 @@
       "lat": 53.5423538912,
       "lng": -2.1258579193,
       "lines": [
-        "Oldham Town Centre",
-        "Oldham and Rochdale"
+        "pink"
       ]
     },
     "Exchange Square": {
@@ -960,9 +962,11 @@
       "lat": 53.4844652692,
       "lng": -2.2426735994,
       "lines": [
-        "Bury",
-        "Piccadilly Spur",
-        "Second City Crossing"
+        "light-blue",
+        "purple",
+        "green",
+        "blue",
+        "pink"
       ]
     },
     "The Trafford Centre": {
@@ -972,7 +976,7 @@
       "lat": 53.4679165082,
       "lng": -2.3477940921,
       "lines": [
-        "Trafford"
+        "red"
       ]
     },
     "Wharfside": {
@@ -982,8 +986,7 @@
       "lat": 53.4662371372,
       "lng": -2.2875084333,
       "lines": [
-        "Eccles",
-        "Trafford"
+        "red"
       ]
     },
     "Imperial War Museum": {
@@ -993,9 +996,7 @@
       "lat": 53.4686012552,
       "lng": -2.2967749705,
       "lines": [
-        "Eccles",
-        "MediaCity Spur",
-        "Trafford"
+        "red"
       ]
     },
     "Village": {
@@ -1005,7 +1006,7 @@
       "lat": 53.4674095941,
       "lng": -2.309073014,
       "lines": [
-        "Trafford"
+        "red"
       ]
     },
     "Parkway": {
@@ -1015,7 +1016,7 @@
       "lat": 53.4682676521,
       "lng": -2.3243797567,
       "lines": [
-        "Trafford"
+        "red"
       ]
     },
     "Barton Dock Road": {
@@ -1025,7 +1026,7 @@
       "lat": 53.4657339268,
       "lng": -2.3419892513,
       "lines": [
-        "Trafford"
+        "red"
       ]
     },
     "St Peter's Square": {
@@ -1035,9 +1036,11 @@
       "lat": 53.4782182293,
       "lng": -2.2431081393,
       "lines": [
-        "Bury",
-        "Piccadilly Spur",
-        "Second City Crossing"
+        "light-blue",
+        "purple",
+        "green",
+        "blue",
+        "pink"
       ]
     }
   },
@@ -1047,12 +1050,12 @@
       "Prestwich"
     ],
     "Bowker Vale": [
-      "Crumpsall",
-      "Heaton Park"
+      "Heaton Park",
+      "Crumpsall"
     ],
     "Crumpsall": [
-      "Abraham Moss",
-      "Bowker Vale"
+      "Bowker Vale",
+      "Abraham Moss"
     ],
     "Bury": [
       "Radcliffe"
@@ -1070,29 +1073,25 @@
       "Whitefield"
     ],
     "Prestwich": [
-      "Besses o' th' Barn",
-      "Heaton Park"
+      "Heaton Park",
+      "Besses o' th' Barn"
     ],
     "Victoria": [
-      "Exchange Square",
-      "Market Street",
-      "Piccadilly Gardens",
       "Shudehill",
-      "St Peter's Square"
+      "Exchange Square",
+      "Monsall",
+      "Queens Road"
     ],
     "Market Street": [
-      "Exchange Square",
-      "Piccadilly Gardens",
       "Shudehill",
-      "Victoria"
+      "Piccadilly Gardens",
+      "St Peter's Square"
     ],
     "Piccadilly Gardens": [
-      "Deansgate-Castlefield",
-      "Exchange Square",
       "Market Street",
-      "Piccadilly",
       "St Peter's Square",
-      "Victoria"
+      "Piccadilly",
+      "Exchange Square"
     ],
     "Piccadilly": [
       "New Islington",
@@ -1100,76 +1099,74 @@
     ],
     "Deansgate-Castlefield": [
       "Cornbrook",
-      "Exchange Square",
-      "Piccadilly Gardens",
       "St Peter's Square"
     ],
     "Pomona": [
-      "Cornbrook",
+      "Wharfside",
       "Exchange Quay",
-      "Trafford Bar"
+      "Cornbrook"
     ],
     "Trafford Bar": [
+      "Old Trafford",
       "Cornbrook",
-      "Exchange Quay",
-      "Pomona"
+      "Firswood"
     ],
     "Shudehill": [
-      "Exchange Square",
       "Market Street",
-      "Queens Road",
       "Victoria"
     ],
     "Firswood": [
-      "Chorlton",
-      "Old Trafford"
+      "Trafford Bar",
+      "Chorlton"
     ],
     "Chorlton": [
-      "Barlow Moor Road",
-      "Firswood"
+      "Firswood",
+      "St Werburgh's Road"
     ],
     "St Werburgh's Road": [
-      "Barlow Moor Road"
+      "Barlow Moor Road",
+      "Withington",
+      "Chorlton"
     ],
     "Sale Water Park": [
       "Barlow Moor Road",
       "Northern Moor"
     ],
     "Northern Moor": [
-      "Sale Water Park",
-      "Wythenshawe Park"
+      "Wythenshawe Park",
+      "Sale Water Park"
     ],
     "Wythenshawe Park": [
       "Moor Road",
       "Northern Moor"
     ],
     "Moor Road": [
-      "Baguley",
-      "Wythenshawe Park"
+      "Wythenshawe Park",
+      "Baguley"
     ],
     "Baguley": [
-      "Moor Road",
-      "Roundthorn"
+      "Roundthorn",
+      "Moor Road"
     ],
     "Roundthorn": [
       "Baguley",
       "Martinscroft"
     ],
     "Martinscroft": [
-      "Benchill",
-      "Roundthorn"
+      "Roundthorn",
+      "Benchill"
     ],
     "Benchill": [
       "Crossacres",
       "Martinscroft"
     ],
     "Crossacres": [
-      "Benchill",
-      "Wythenshawe Town Centre"
+      "Wythenshawe Town Centre",
+      "Benchill"
     ],
     "Robinswood Road": [
-      "Peel Hall",
-      "Wythenshawe Town Centre"
+      "Wythenshawe Town Centre",
+      "Peel Hall"
     ],
     "Peel Hall": [
       "Robinswood Road",
@@ -1183,16 +1180,16 @@
       "Shadowmoss"
     ],
     "New Islington": [
-      "Holt Town",
-      "Piccadilly"
+      "Piccadilly",
+      "Holt Town"
     ],
     "Holt Town": [
-      "Etihad Campus",
-      "New Islington"
+      "New Islington",
+      "Etihad Campus"
     ],
     "Etihad Campus": [
-      "Holt Town",
-      "Velopark"
+      "Velopark",
+      "Holt Town"
     ],
     "Velopark": [
       "Clayton Hall",
@@ -1203,20 +1200,20 @@
       "Velopark"
     ],
     "Edge Lane": [
-      "Cemetery Road",
-      "Clayton Hall"
+      "Clayton Hall",
+      "Cemetery Road"
     ],
     "Cemetery Road": [
       "Droylsden",
       "Edge Lane"
     ],
     "Droylsden": [
-      "Audenshaw",
-      "Cemetery Road"
+      "Cemetery Road",
+      "Audenshaw"
     ],
     "Audenshaw": [
-      "Ashton Moss",
-      "Droylsden"
+      "Droylsden",
+      "Ashton Moss"
     ],
     "Ashton Moss": [
       "Ashton West",
@@ -1230,25 +1227,24 @@
       "Ashton West"
     ],
     "Queens Road": [
-      "Abraham Moss",
-      "Monsall",
-      "Shudehill"
+      "Shudehill",
+      "Abraham Moss"
     ],
     "Monsall": [
       "Central Park",
-      "Queens Road"
+      "Victoria"
     ],
     "Central Park": [
-      "Monsall",
-      "Newton Heath and Moston"
+      "Newton Heath and Moston",
+      "Monsall"
     ],
     "Newton Heath and Moston": [
       "Central Park",
       "Failsworth"
     ],
     "Failsworth": [
-      "Hollinwood",
-      "Newton Heath and Moston"
+      "Newton Heath and Moston",
+      "Hollinwood"
     ],
     "Hollinwood": [
       "Failsworth",
@@ -1280,12 +1276,12 @@
       "Timperley"
     ],
     "Timperley": [
-      "Brooklands",
-      "Navigation Road"
+      "Navigation Road",
+      "Brooklands"
     ],
     "Navigation Road": [
-      "Altrincham",
-      "Timperley"
+      "Timperley",
+      "Altrincham"
     ],
     "Altrincham": [
       "Navigation Road"
@@ -1294,81 +1290,66 @@
       "Ladywell"
     ],
     "Ladywell": [
-      "Eccles",
-      "Weaste"
+      "Weaste",
+      "Eccles"
     ],
     "Salford Quays": [
       "Anchorage",
-      "Exchange Quay",
-      "Wharfside"
+      "Exchange Quay"
     ],
     "Exchange Quay": [
-      "Old Trafford",
       "Pomona",
-      "Salford Quays",
-      "Trafford Bar",
-      "Wharfside"
+      "Salford Quays"
     ],
     "Harbour City": [
-      "Anchorage",
       "Broadway",
-      "Imperial War Museum",
-      "Langworthy",
       "MediaCityUK",
-      "Wharfside"
+      "Anchorage"
     ],
     "Anchorage": [
       "Harbour City",
-      "Langworthy",
       "Salford Quays"
     ],
     "Broadway": [
+      "MediaCityUK",
       "Harbour City",
-      "Imperial War Museum",
-      "Langworthy",
-      "MediaCityUK"
+      "Langworthy"
     ],
     "Langworthy": [
-      "Anchorage",
-      "Broadway",
-      "Harbour City",
-      "Imperial War Museum",
-      "Weaste"
+      "Weaste",
+      "Broadway"
     ],
     "Weaste": [
       "Ladywell",
       "Langworthy"
     ],
     "Old Trafford": [
-      "Exchange Quay",
-      "Firswood",
-      "Stretford"
+      "Stretford",
+      "Trafford Bar"
     ],
     "Stretford": [
-      "Dane Road",
-      "Old Trafford"
+      "Old Trafford",
+      "Dane Road"
     ],
     "MediaCityUK": [
-      "Broadway",
       "Harbour City",
-      "Imperial War Museum",
-      "Village"
+      "Broadway"
     ],
     "Freehold": [
-      "South Chadderton",
-      "Westwood"
+      "Westwood",
+      "South Chadderton"
     ],
     "Oldham King Street": [
-      "Oldham Central",
-      "Westwood"
+      "Westwood",
+      "Oldham Central"
     ],
     "Oldham Central": [
-      "Oldham King Street",
-      "Oldham Mumps"
+      "Oldham Mumps",
+      "Oldham King Street"
     ],
     "Oldham Mumps": [
-      "Derker",
-      "Oldham Central"
+      "Oldham Central",
+      "Derker"
     ],
     "Derker": [
       "Oldham Mumps",
@@ -1395,29 +1376,27 @@
       "Rochdale Railway Station"
     ],
     "Rochdale Railway Station": [
-      "Newbold",
-      "Rochdale Town Centre"
+      "Rochdale Town Centre",
+      "Newbold"
     ],
     "Rochdale Town Centre": [
       "Rochdale Railway Station"
     ],
     "Barlow Moor Road": [
-      "Chorlton",
       "Sale Water Park",
-      "St Werburgh's Road",
-      "Withington"
+      "St Werburgh's Road"
     ],
     "Withington": [
-      "Barlow Moor Road",
+      "St Werburgh's Road",
       "Burton Road"
     ],
     "Burton Road": [
-      "West Didsbury",
-      "Withington"
+      "Withington",
+      "West Didsbury"
     ],
     "West Didsbury": [
-      "Burton Road",
-      "Didsbury Village"
+      "Didsbury Village",
+      "Burton Road"
     ],
     "Didsbury Village": [
       "East Didsbury",
@@ -1427,18 +1406,14 @@
       "Didsbury Village"
     ],
     "Wythenshawe Town Centre": [
-      "Crossacres",
-      "Robinswood Road"
+      "Robinswood Road",
+      "Crossacres"
     ],
     "Westwood": [
-      "Freehold",
-      "Oldham King Street"
+      "Oldham King Street",
+      "Freehold"
     ],
     "Exchange Square": [
-      "Deansgate-Castlefield",
-      "Market Street",
-      "Piccadilly Gardens",
-      "Shudehill",
       "St Peter's Square",
       "Victoria"
     ],
@@ -1446,18 +1421,15 @@
       "Barton Dock Road"
     ],
     "Wharfside": [
-      "Exchange Quay",
-      "Harbour City",
-      "Salford Quays"
+      "Imperial War Museum",
+      "Pomona"
     ],
     "Imperial War Museum": [
-      "Broadway",
-      "Harbour City",
-      "Langworthy",
-      "MediaCityUK"
+      "Village",
+      "Wharfside"
     ],
     "Village": [
-      "MediaCityUK",
+      "Imperial War Museum",
       "Parkway"
     ],
     "Parkway": [
@@ -1472,7 +1444,7 @@
       "Deansgate-Castlefield",
       "Exchange Square",
       "Piccadilly Gardens",
-      "Victoria"
+      "Market Street"
     ]
   },
   "edges": [

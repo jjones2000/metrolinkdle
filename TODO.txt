@@ -1,0 +1,22 @@
+METROLINKDLE TODO
+
+- Update all emojis and graphics to apple ones, ✓, 🎯, ✗, 😔
+- replace green, yellow, red lights too
+- shadows on all boxes?
+- new game -> close, after winning/losing
+- update image links to get rid of /public/
+- update colours of lines
+- remove Piccadilly Spur
+- remove Second City Crossing
+- Trafford Palazzo is called Barton Dock Road
+
+
+
+
+TOPO_STOPS COMPLETED
+Eccles
+Ladywell
+Weaste
+Langworthy
+Broadway
+MediaCityUK

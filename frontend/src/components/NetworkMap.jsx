@@ -4,11 +4,11 @@ import {
   geoToSvg, topoToSvg, SVG_W, SVG_H, evaluateGuess
 } from '../gameLogic'
 
+import { TOPO_STOPS } from '../networkData';
+
 // Line draw order (back → front)
 const LINE_ORDER = [
-  'Bury','Altrincham','Eccles','Manchester Airport','East Didsbury',
-  'Chorlton','Oldham and Rochdale','Droylsden','Ashton','Trafford',
-  'Oldham Town Centre','Rochdale Town Centre','Second City Crossing',
+  'red', 'light-blue', 'pink', 'yellow', 'purple', 'green', 'blue', 'Second City Crossing',
   'MediaCity Spur','Piccadilly Spur',
 ]
 
@@ -279,12 +279,17 @@ export function NetworkMap({ guesses, targetStop, revealTarget, isDarkMode }) {
   }
 
   // Pre-compute SVG positions for the active mode
-  const stopsWithPos = ALL_STOPS.map(stop => ({
+const stopsWithPos = ALL_STOPS.map(stop => {
+  // 1. Get the specific topo data, or an empty object if the name doesn't exist, useful whilst filling in the data
+  const topoData = TOPO_STOPS[stop.name] || {};
+
+  return {
     ...stop,
     _svgPos: mode === 'geo'
       ? geoToSvg(stop.lng, stop.lat)
-      : topoToSvg(stop.topoX, stop.topoY),
-  }))
+      : topoToSvg(topoData.topoX ?? 0, topoData.topoY ?? 0), 
+  };
+});
 
   // Mark topo paths so MapView knows which projection function to call
   const activePaths = mode === 'geo'

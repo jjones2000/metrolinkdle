@@ -15,6 +15,10 @@ export const BOUNDS      = NET.bounds       // {minLat,maxLat,minLng,maxLng}
 export const ALL_STOPS   = Object.values(STOPS)
 export const MAX_GUESSES = 8
 
+const TARGET_URL = "direct-hit_1f3af.png";
+
+
+
 // ─── BFS ─────────────────────────────────────────────────────────────────────
 
 /**
@@ -83,7 +87,7 @@ export function evaluateGuess(guessStop, targetStop) {
 
   // Direction
   const deg = bearing(guessStop, targetStop)
-  const arrow = dist === 0 ? '🎯' : bearingArrow(deg)
+  const arrow = dist === 0 ? `<img src="${TARGET_URL}" alt="target" height={32}/>` : bearingArrow(deg);
 
   // Zone
   const zd         = Math.abs(zoneNum(guessStop.zone) - zoneNum(targetStop.zone))

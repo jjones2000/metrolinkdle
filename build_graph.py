@@ -59,6 +59,7 @@ import argparse
 import json
 import math
 import sys
+import correctStops
 
 
 # ─── Defaults ────────────────────────────────────────────────────────────────
@@ -186,12 +187,13 @@ def build_graph(stops_path: str, lines_path: str, threshold: float) -> dict:
             "zone":  p["ticketZone"],
             "lat":   c[1],
             "lng":   c[0],
-            "lines": sorted(stop_lines[name]),
+            "lines": correctStops.graph[name][1],
         }
 
     return {
         "stops": stops_out,
-        "graph": {name: sorted(nbrs) for name, nbrs in adj.items()},
+        #"graph": {name: sorted(nbrs) for name, nbrs in adj.items()},
+        "graph": {k: v[0] for k, v in correctStops.graph.items()},
         "edges": [
             {"from": a, "to": b, "lines": sorted(ls)}
             for (a, b), ls in sorted(edges.items())
