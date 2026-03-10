@@ -9,7 +9,8 @@ METROLINKDLE TODO
 [ ] remove Piccadilly Spur
 [ ] remove Second City Crossing
 [ ] Trafford Palazzo is called Barton Dock Road
-
+[ ] put circles around lines on guesses to make colours stand out.
+[ ] possibly alter colours of edges with multiple lines on
 
 
 
