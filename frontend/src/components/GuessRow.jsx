@@ -1,5 +1,6 @@
 import { LINE_COLORS, evaluateGuess } from '../gameLogic'
-const TARGET_URL = "direct-hit_1f3af.png"
+const CDN = 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14/assets/72x72'
+const TARGET_URL = `${CDN}/1f3af.png`
 
 export function GuessRow({ guessStop, targetStop, isDarkMode, animDelay = 0 }) {
   const ev = evaluateGuess(guessStop, targetStop)
@@ -54,7 +55,13 @@ export function GuessRow({ guessStop, targetStop, isDarkMode, animDelay = 0 }) {
         </div>
         <div style={{ display: 'flex', gap: 3, marginTop: 4 }}>
           {guessStop.lines.slice(0, 3).map(ln => (
-            <div key={ln} style={{ width: 6, height: 6, borderRadius: '50%', background: LINE_COLORS[ln] || '#888', border: '1px solid rgba(255,255,255,0.3)' }} />
+            <div key={ln} style={{
+              width: 8, height: 8, borderRadius: '50%',
+              background: LINE_COLORS[ln] || '#888',
+              border: '1.5px solid rgba(255,255,255,0.7)',
+              boxShadow: '0 0 0 1px rgba(0,0,0,0.4)',
+              flexShrink: 0,
+            }} />
           ))}
         </div>
       </Cell>

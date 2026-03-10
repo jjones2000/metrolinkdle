@@ -8,12 +8,13 @@ import { usePlayerId } from './hooks/usePlayerId'
 import { useDaily }    from './hooks/useDaily'
 import { useStats }    from './hooks/useStats'
 import { STOPS, MAX_GUESSES, buildShareText } from './gameLogic'
+import KofiWidget from './components/KofiWidget';
 
-const APPLE_BEE_URL = "../public/honeybee.png";
+const APPLE_BEE_URL = "./honeybee.png";
 
 const MODE = {
-  SUN : "../public/sun_2600-fe0f.png",
-  MOON : "../public/crescent-moon_1f319.png"
+  SUN : "./sun_2600-fe0f.png",
+  MOON : "./crescent-moon_1f319.png"
 }
 
 // 2. Small helper component to keep the list clean
@@ -233,6 +234,7 @@ export default function App() {
             </div>
           )}
         </main>
+       <KofiWidget />
 
         <footer style={{ width: '100%', borderTop: '3px solid #333', background: '#FFCC00',
           padding: '24px', textAlign: 'center', marginTop: 'auto' }}>
