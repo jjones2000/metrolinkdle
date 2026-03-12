@@ -87,7 +87,7 @@ export function evaluateGuess(guessStop, targetStop) {
 
   // Direction
   const deg = bearing(guessStop, targetStop)
-  const arrow = dist === 0 ? `<img src="${TARGET_URL}" alt="target" height={32}/>` : bearingArrow(deg);
+  const arrow = dist === 0 ? '🎯' : bearingArrow(deg);
 
   // Zone
   const zd         = Math.abs(zoneNum(guessStop.zone) - zoneNum(targetStop.zone))
@@ -116,7 +116,9 @@ const STATUS_EMOJI = { correct: '🟢', partial: '🟡', wrong: '🔴' }
 
 export function buildShareText(guesses, targetStop, won) {
   const score = won ? `${guesses.length}/${MAX_GUESSES}` : `X/${MAX_GUESSES}`
-  const rows  = guesses.map(({ stop }) => {
+  const rows  = guesses.map(({ stop }, i) => {
+    const isLast = won && i === guesses.length - 1
+    if (isLast) return '🎯🎯🎯🎯'
     const ev = evaluateGuess(stop, targetStop)
     return [
       STATUS_EMOJI[ev.lineStatus],
