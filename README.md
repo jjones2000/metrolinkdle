@@ -126,7 +126,7 @@ npm run dev
 
 3. **Site configuration → Environment variables**, add:
    ```
-   VITE_API_URL=https://metrolinkdle-backend.onrender.com
+   VITE_API_URL=https://metrolinkdle.onrender.com
    ```
 
 4. Click **Deploy** — your app will be live at `your-app.netlify.app`
