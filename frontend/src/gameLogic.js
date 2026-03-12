@@ -15,10 +15,6 @@ export const BOUNDS      = NET.bounds       // {minLat,maxLat,minLng,maxLng}
 export const ALL_STOPS   = Object.values(STOPS)
 export const MAX_GUESSES = 8
 
-const TARGET_URL = "direct-hit_1f3af.png";
-
-
-
 // ─── BFS ─────────────────────────────────────────────────────────────────────
 
 /**
@@ -127,7 +123,7 @@ export function buildShareText(guesses, targetStop, won) {
       STATUS_EMOJI[ev.zoneStatus],
     ].join('')
   })
-  return [`Metrolinkdle ${score}`, ...rows, 'https://metrolinkdle.app'].join('\n')
+  return [`Metrolinkdle ${score}`, ...rows, 'https://metrolinkdle.com'].join('\n')
 }
 
 
