@@ -1,13 +1,13 @@
 METROLINKDLE TODO
 
-[ ] Update all emojis and graphics to apple ones, ✓, 🎯, ✗, 😔
-[ ] replace green, yellow, red lights too
+[ ] Revert all emojis back to android copied in, todo this search for all .png 
 [ ] shadows on all boxes?
 [ ] new game -> close, after winning/losing
 [X] update image links to get rid of /public/
 [ ] update colours of lines
 [ ] remove Piccadilly Spur
 [ ] remove Second City Crossing
+[ ] check the readme and write better documentation
 [ ] Trafford Palazzo is called Barton Dock Road
 [ ] put circles around lines on guesses to make colours stand out.
 [ ] possibly alter colours of edges with multiple lines on

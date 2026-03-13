@@ -40,8 +40,13 @@ function MapView({ paths, stops, stopStatuses, targetStop, revealTarget, isDarkM
   const dragRef   = useRef(null)
   const touchRef  = useRef(null)
   const scrollRef = useRef(null)
+  // Keep a ref to current pan so event handlers always see latest values
+  // without needing to be re-registered on every pan change
+  const panRef    = useRef(pan)
+  useEffect(() => { panRef.current = pan }, [pan])
 
-  // Wheel zoom + touch pan/pinch via non-passive listeners so we can preventDefault
+  // Register wheel + touch listeners once only (empty dep array).
+  // Handlers read panRef.current instead of closing over stale pan state.
   useEffect(() => {
     const el = scrollRef.current
     if (!el) return
@@ -53,11 +58,12 @@ function MapView({ paths, stops, stopStatuses, targetStop, revealTarget, isDarkM
     }
 
     const onTouchStart = (e) => {
+      const cur = panRef.current
       if (e.touches.length === 1) {
         touchRef.current = {
           type: 'pan',
-          x: e.touches[0].clientX - pan.x,
-          y: e.touches[0].clientY - pan.y,
+          x: e.touches[0].clientX - cur.x,
+          y: e.touches[0].clientY - cur.y,
         }
       } else if (e.touches.length === 2) {
         const dx = e.touches[0].clientX - e.touches[1].clientX
@@ -65,9 +71,7 @@ function MapView({ paths, stops, stopStatuses, targetStop, revealTarget, isDarkM
         touchRef.current = {
           type: 'pinch',
           dist: Math.hypot(dx, dy),
-          scale: pan.scale,
-          x: pan.x,
-          y: pan.y,
+          scale: cur.scale,
         }
       }
     }
@@ -86,8 +90,7 @@ function MapView({ paths, stops, stopStatuses, targetStop, revealTarget, isDarkM
         const dy = e.touches[0].clientY - e.touches[1].clientY
         const dist = Math.hypot(dx, dy)
         const ratio = dist / touchRef.current.dist
-        const newScale = Math.max(0.4, Math.min(14, touchRef.current.scale * ratio))
-        setPan(p => ({ ...p, scale: newScale }))
+        setPan(p => ({ ...p, scale: Math.max(0.4, Math.min(14, touchRef.current.scale * ratio)) }))
       }
     }
 
@@ -103,14 +106,15 @@ function MapView({ paths, stops, stopStatuses, targetStop, revealTarget, isDarkM
       el.removeEventListener('touchmove', onTouchMove)
       el.removeEventListener('touchend', onTouchEnd)
     }
-  }, [pan.x, pan.y, pan.scale])
+  }, [])  // runs once — handlers use panRef, not stale closure values
 
   function onMouseDown(e) {
-    dragRef.current = { x: e.clientX - pan.x, y: e.clientY - pan.y }
+    dragRef.current = { x: e.clientX - panRef.current.x, y: e.clientY - panRef.current.y }
   }
   function onMouseMove(e) {
-    if (!dragRef.current) return
-    setPan(p => ({ ...p, x: e.clientX - dragRef.current.x, y: e.clientY - dragRef.current.y }))
+    const drag = dragRef.current
+    if (!drag) return
+    setPan(p => ({ ...p, x: e.clientX - drag.x, y: e.clientY - drag.y }))
   }
   function onMouseUp() { dragRef.current = null }
 
