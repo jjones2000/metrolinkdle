@@ -60,6 +60,8 @@ def load_stops() -> list[str]:
 
 # ─── Daily target logic ───────────────────────────────────────────────────────
 
+LAUNCH_DATE = date(2026, 3, 13)  # Puzzle #1
+
 def get_daily_stop(stops: list[str], for_date: date | None = None) -> dict:
     """
     Deterministic daily stop selection.
@@ -69,10 +71,12 @@ def get_daily_stop(stops: list[str], for_date: date | None = None) -> dict:
     d = for_date or date.today()
     digest = hashlib.sha256(d.isoformat().encode()).hexdigest()
     index  = int(digest[:8], 16) % len(stops)
+    game_number = (d - LAUNCH_DATE).days + 1
     return {
-        "stop":       stops[index],
-        "date":       d.isoformat(),
-        "stop_index": index,       # useful for debugging
+        "stop":        stops[index],
+        "date":        d.isoformat(),
+        "stop_index":  index,
+        "game_number": max(game_number, 1),
     }
 
 # ─── Database ─────────────────────────────────────────────────────────────────

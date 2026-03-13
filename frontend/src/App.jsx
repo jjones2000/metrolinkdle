@@ -246,8 +246,11 @@ export default function App() {
         <footer style={{ width: '100%', borderTop: '3px solid #333', background: '#FFCC00',
           padding: '24px', textAlign: 'center', marginTop: 'auto' }}>
           <img src={APPLE_BEE_URL} alt="Bee" style={{ width: 24, height: 24, marginBottom: 8 }} />
+          <p style={{ fontFamily: "'Bebas Neue',cursive", fontSize: 16, color: '#333', letterSpacing: 1, marginBottom: 2 }}>
+            {gameNumber ? `Metrolinkdle #${gameNumber}` : 'Metrolinkdle'}
+          </p>
           <p style={{ fontSize: 11, fontWeight: 700, color: '#333', letterSpacing: 0.5 }}>
-            Metrolinkdle is a Bee Network Fan Project • Data © TfGM
+            Bee Network Fan Project • Data © TfGM
           </p>
         </footer>
       </div>

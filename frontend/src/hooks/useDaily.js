@@ -16,42 +16,46 @@ function getCached() {
   try {
     const raw = sessionStorage.getItem(CACHE_KEY)
     if (!raw) return null
-    const { date, stop } = JSON.parse(raw)
-    // Invalidate if the cached date is not today
-    if (date === new Date().toISOString().slice(0, 10)) return stop
+    const { date, stop, game_number } = JSON.parse(raw)
+    // Invalidate if the cached date is not today, or if game_number is missing
+    if (date === new Date().toISOString().slice(0, 10) && game_number) {
+      return { stop, game_number }
+    }
   } catch {
     // ignore parse errors
   }
   return null
 }
 
-function setCache(date, stop) {
+function setCache(date, stop, game_number) {
   try {
-    sessionStorage.setItem(CACHE_KEY, JSON.stringify({ date, stop }))
+    sessionStorage.setItem(CACHE_KEY, JSON.stringify({ date, stop, game_number }))
   } catch {
     // ignore storage errors (private browsing quota)
   }
 }
 
 /**
- * @returns {{ targetStop: string|null, loading: boolean, error: string|null }}
+ * @returns {{ targetStop: string|null, gameNumber: number|null, loading: boolean, error: string|null }}
  */
 export function useDaily() {
-  const [targetStop, setTargetStop] = useState(() => getCached())
-  const [loading,    setLoading]    = useState(!getCached())
+  const cached = getCached()
+  const [targetStop, setTargetStop] = useState(cached?.stop || null)
+  const [gameNumber, setGameNumber] = useState(cached?.game_number || null)
+  const [loading,    setLoading]    = useState(!cached)
   const [error,      setError]      = useState(null)
 
   useEffect(() => {
-    // Already have a valid cached value — nothing to do
-    if (targetStop) return
+    if (targetStop && gameNumber) return
 
     let cancelled = false
 
     fetchDailyStop()
       .then(data => {
         if (cancelled) return
-        setCache(data.date, data.stop)
+        setCache(data.date, data.stop, data.game_number)
         setTargetStop(data.stop)
+        setGameNumber(data.game_number)
         setLoading(false)
       })
       .catch(err => {
@@ -62,7 +66,7 @@ export function useDaily() {
       })
 
     return () => { cancelled = true }
-  }, [targetStop])
+  }, [targetStop, gameNumber])
 
-  return { targetStop, loading, error }
+  return { targetStop, gameNumber, loading, error }
 }

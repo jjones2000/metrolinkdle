@@ -110,7 +110,8 @@ export function evaluateGuess(guessStop, targetStop) {
 
 const STATUS_EMOJI = { correct: '🟢', partial: '🟡', wrong: '🔴' }
 
-export function buildShareText(guesses, targetStop, won) {
+export function buildShareText(guesses, targetStop, won, gameNumber) {
+  const tag   = gameNumber ? `#${gameNumber} ` : ''
   const score = won ? `${guesses.length}/${MAX_GUESSES}` : `X/${MAX_GUESSES}`
   const rows  = guesses.map(({ stop }, i) => {
     const isLast = won && i === guesses.length - 1
@@ -123,7 +124,7 @@ export function buildShareText(guesses, targetStop, won) {
       STATUS_EMOJI[ev.zoneStatus],
     ].join('')
   })
-  return [`Metrolinkdle ${score}`, ...rows, 'https://metrolinkdle.com'].join('\n')
+  return [`Metrolinkdle ${tag}${score}`, ...rows, 'https://metrolinkdle.com'].join('\n')
 }
 
 
