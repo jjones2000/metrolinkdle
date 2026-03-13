@@ -41,18 +41,69 @@ function MapView({ paths, stops, stopStatuses, targetStop, revealTarget, isDarkM
   const touchRef  = useRef(null)
   const scrollRef = useRef(null)
 
-  // Wheel zoom via non-passive listener (must be imperative to call preventDefault)
+  // Wheel zoom + touch pan/pinch via non-passive listeners so we can preventDefault
   useEffect(() => {
     const el = scrollRef.current
     if (!el) return
-    const handler = (e) => {
+
+    const onWheel = (e) => {
       e.preventDefault()
       const factor = e.deltaY < 0 ? 1.12 : 0.89
       setPan(p => ({ ...p, scale: Math.max(0.4, Math.min(14, p.scale * factor)) }))
     }
-    el.addEventListener('wheel', handler, { passive: false })
-    return () => el.removeEventListener('wheel', handler)
-  }, [])
+
+    const onTouchStart = (e) => {
+      if (e.touches.length === 1) {
+        touchRef.current = {
+          type: 'pan',
+          x: e.touches[0].clientX - pan.x,
+          y: e.touches[0].clientY - pan.y,
+        }
+      } else if (e.touches.length === 2) {
+        const dx = e.touches[0].clientX - e.touches[1].clientX
+        const dy = e.touches[0].clientY - e.touches[1].clientY
+        touchRef.current = {
+          type: 'pinch',
+          dist: Math.hypot(dx, dy),
+          scale: pan.scale,
+          x: pan.x,
+          y: pan.y,
+        }
+      }
+    }
+
+    const onTouchMove = (e) => {
+      e.preventDefault()
+      if (!touchRef.current) return
+      if (e.touches.length === 1 && touchRef.current.type === 'pan') {
+        setPan(p => ({
+          ...p,
+          x: e.touches[0].clientX - touchRef.current.x,
+          y: e.touches[0].clientY - touchRef.current.y,
+        }))
+      } else if (e.touches.length === 2 && touchRef.current.type === 'pinch') {
+        const dx = e.touches[0].clientX - e.touches[1].clientX
+        const dy = e.touches[0].clientY - e.touches[1].clientY
+        const dist = Math.hypot(dx, dy)
+        const ratio = dist / touchRef.current.dist
+        const newScale = Math.max(0.4, Math.min(14, touchRef.current.scale * ratio))
+        setPan(p => ({ ...p, scale: newScale }))
+      }
+    }
+
+    const onTouchEnd = () => { touchRef.current = null }
+
+    el.addEventListener('wheel', onWheel, { passive: false })
+    el.addEventListener('touchstart', onTouchStart, { passive: false })
+    el.addEventListener('touchmove', onTouchMove, { passive: false })
+    el.addEventListener('touchend', onTouchEnd)
+    return () => {
+      el.removeEventListener('wheel', onWheel)
+      el.removeEventListener('touchstart', onTouchStart)
+      el.removeEventListener('touchmove', onTouchMove)
+      el.removeEventListener('touchend', onTouchEnd)
+    }
+  }, [pan.x, pan.y, pan.scale])
 
   function onMouseDown(e) {
     dragRef.current = { x: e.clientX - pan.x, y: e.clientY - pan.y }
@@ -62,19 +113,6 @@ function MapView({ paths, stops, stopStatuses, targetStop, revealTarget, isDarkM
     setPan(p => ({ ...p, x: e.clientX - dragRef.current.x, y: e.clientY - dragRef.current.y }))
   }
   function onMouseUp() { dragRef.current = null }
-
-  function onTouchStart(e) {
-    if (e.touches.length === 1)
-      touchRef.current = { x: e.touches[0].clientX - pan.x, y: e.touches[0].clientY - pan.y }
-  }
-  function onTouchMove(e) {
-    if (e.touches.length === 1 && touchRef.current)
-      setPan(p => ({
-        ...p,
-        x: e.touches[0].clientX - touchRef.current.x,
-        y: e.touches[0].clientY - touchRef.current.y,
-      }))
-  }
 
   const handleEnter = useCallback((stop, e) => {
     setHoveredStop(stop.name)
@@ -100,7 +138,7 @@ function MapView({ paths, stops, stopStatuses, targetStop, revealTarget, isDarkM
           overflow: 'hidden',
           cursor: dragRef.current ? 'grabbing' : 'grab',
           touchAction: 'none',
-          height: 420,
+          height: window.innerWidth < 640 ? 'clamp(220px, 40vh, 320px)' : 420,
           background: colors.bg,
           transition: 'background 0.3s',
         }}
@@ -108,9 +146,7 @@ function MapView({ paths, stops, stopStatuses, targetStop, revealTarget, isDarkM
         onMouseMove={onMouseMove}
         onMouseUp={onMouseUp}
         onMouseLeave={() => { onMouseUp(); setHoveredStop(null); setTooltip(null) }}
-        onTouchStart={onTouchStart}
-        onTouchMove={onTouchMove}
-        onTouchEnd={() => { touchRef.current = null }}
+
       >
         <svg
           viewBox={`0 0 ${SVG_W} ${SVG_H}`}

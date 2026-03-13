@@ -75,7 +75,7 @@ function LoadingScreen({ error }) {
 
 export default function App() {
   const playerId = usePlayerId()
-  const { targetStop: targetName, loading, error } = useDaily()
+  const { targetStop: targetName, gameNumber, loading, error } = useDaily()
   const { stats, recordResult } = useStats(playerId)
 
   const [isDarkMode, setIsDarkMode] = useState(false)
@@ -132,7 +132,7 @@ export default function App() {
   }, [targetStop, gameOver, guesses, guessedNames, recordResult])
 
   function handleShare() {
-    const text = buildShareText(guesses, targetStop, won)
+    const text = buildShareText(guesses, targetStop, won, gameNumber)
     navigator.clipboard?.writeText(text)
       .then(() => showToast('Copied to clipboard!'))
       .catch(() => showToast('Copy failed'))
@@ -176,9 +176,16 @@ export default function App() {
           height: 68, position: 'sticky', top: 0, zIndex: 1000, boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
             <img src={APPLE_BEE_URL} alt="Bee" style={{ width: 34, height: 34 }} />
-            <span style={{ fontFamily: "'Bebas Neue',cursive", fontSize: 34, letterSpacing: 2, color: theme.text }}>
-              METROLINK<span style={{ color: '#FFCC00' }}>DLE</span>
-            </span>
+            <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1 }}>
+              <span style={{ fontFamily: "'Bebas Neue',cursive", fontSize: 34, letterSpacing: 2, color: theme.text }}>
+                METROLINK<span style={{ color: '#FFCC00' }}>DLE</span>
+              </span>
+              {gameNumber && (
+                <span style={{ fontSize: 11, fontWeight: 700, color: theme.subtext, letterSpacing: 1.5, textTransform: 'uppercase' }}>
+                  #{gameNumber} · {new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
+                </span>
+              )}
+            </div>
           </div>
           <div style={{ display: 'flex', gap: 10 }}>
             <button onClick={() => setIsDarkMode(!isDarkMode)} style={{
@@ -247,7 +254,7 @@ export default function App() {
 
       {showHowTo && <HowToModal onClose={() => setShowHowTo(false)} isDarkMode={isDarkMode} />}
       {showResult && targetStop && (
-        <ResultModal won={won} guesses={guesses} targetStop={targetStop} stats={stats} onClose={() => setShowResult(false)} onShare={handleShare} onPlayAgain={() => window.location.reload()} isDarkMode={isDarkMode} />
+        <ResultModal won={won} guesses={guesses} targetStop={targetStop} stats={stats} onClose={() => setShowResult(false)} onShare={handleShare} gameNumber={gameNumber} isDarkMode={isDarkMode} />
       )}
       <Toast message={toast.msg} show={toast.show} />
     </>

@@ -36,7 +36,7 @@ function DistBar({ n, label, max, highlight }) {
   )
 }
 
-export function ResultModal({ won, guesses, targetStop, stats, onClose, onShare }) {
+export function ResultModal({ won, guesses, targetStop, stats, onClose, onShare, gameNumber }) {
   const n     = guesses.length
   const emoji = won
     ? <img src={WIN_EMOJI_IMGS[n - 1].url} alt={WIN_EMOJI_IMGS[n - 1].emoji} height={26} />
@@ -64,6 +64,11 @@ export function ResultModal({ won, guesses, targetStop, stats, onClose, onShare 
         <div style={{ textAlign: 'center', paddingBottom: 10, borderBottom: '1px solid #383838', marginBottom: 10 }}>
           <div style={{ marginBottom: 3 }}>{emoji}</div>
           <div style={{ fontFamily: "'Bebas Neue',cursive", fontSize: 'clamp(20px, 5vw, 26px)', letterSpacing: 3, color: '#FFCC00' }}>{title}</div>
+          {gameNumber && (
+            <div style={{ fontSize: 10, color: '#888', letterSpacing: 1.5, textTransform: 'uppercase', marginTop: 2 }}>
+              Puzzle #{gameNumber}
+            </div>
+          )}
           <div style={{ background: '#FFCC00', color: '#000', borderRadius: 10, padding: '7px 14px', margin: '7px 0' }}>
             <div style={{ fontSize: 9, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 1, opacity: .6, marginBottom: 1 }}>Today's stop was</div>
             <div style={{ fontFamily: "'Bebas Neue',cursive", fontSize: 'clamp(16px, 4vw, 20px)', letterSpacing: 2 }}>{targetStop.name}</div>
