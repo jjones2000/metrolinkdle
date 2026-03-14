@@ -21,7 +21,6 @@ const KofiWidget = () => {
     });
     document.body.appendChild(script);
   }, []);
-
   return null;
 };
 

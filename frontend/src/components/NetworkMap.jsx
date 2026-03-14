@@ -78,33 +78,37 @@ function MapView({ paths, stops, stopStatuses, targetStop, revealTarget, isDarkM
 
     const onTouchMove = (e) => {
       e.preventDefault()
-      if (!touchRef.current) return
-      if (e.touches.length === 1 && touchRef.current.type === 'pan') {
+      const touch = touchRef.current
+      if (!touch) return
+      if (e.touches.length === 1 && touch.type === 'pan') {
         setPan(p => ({
           ...p,
-          x: e.touches[0].clientX - touchRef.current.x,
-          y: e.touches[0].clientY - touchRef.current.y,
+          x: e.touches[0].clientX - touch.x,
+          y: e.touches[0].clientY - touch.y,
         }))
-      } else if (e.touches.length === 2 && touchRef.current.type === 'pinch') {
+      } else if (e.touches.length === 2 && touch.type === 'pinch') {
         const dx = e.touches[0].clientX - e.touches[1].clientX
         const dy = e.touches[0].clientY - e.touches[1].clientY
         const dist = Math.hypot(dx, dy)
-        const ratio = dist / touchRef.current.dist
-        setPan(p => ({ ...p, scale: Math.max(0.4, Math.min(14, touchRef.current.scale * ratio)) }))
+        const ratio = dist / touch.dist
+        setPan(p => ({ ...p, scale: Math.max(0.4, Math.min(14, touch.scale * ratio)) }))
       }
     }
 
     const onTouchEnd = () => { touchRef.current = null }
+    const onTouchCancel = () => { touchRef.current = null }
 
     el.addEventListener('wheel', onWheel, { passive: false })
     el.addEventListener('touchstart', onTouchStart, { passive: false })
     el.addEventListener('touchmove', onTouchMove, { passive: false })
     el.addEventListener('touchend', onTouchEnd)
+    el.addEventListener('touchcancel', onTouchCancel)
     return () => {
       el.removeEventListener('wheel', onWheel)
       el.removeEventListener('touchstart', onTouchStart)
       el.removeEventListener('touchmove', onTouchMove)
       el.removeEventListener('touchend', onTouchEnd)
+      el.removeEventListener('touchcancel', onTouchCancel)
     }
   }, [])  // runs once — handlers use panRef, not stale closure values
 
