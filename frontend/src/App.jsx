@@ -179,18 +179,13 @@ export default function App() {
         <header style={{ width: '100%', background: theme.card, borderBottom: '5px solid #FFCC00',
           padding: '0 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between',
           height: 68, position: 'sticky', top: 0, zIndex: 1000, boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-            <img src={APPLE_BEE_URL} alt="Bee" style={{ width: 34, height: 34 }} />
-            <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1 }}>
-              <span style={{ fontFamily: "'Bebas Neue',cursive", fontSize: 34, letterSpacing: 2, color: theme.text }}>
-                METROLINK<span style={{ color: '#FFCC00' }}>DLE</span>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+            <img src="./logo.svg" alt="Metrolinkdle" style={{ height: 44, width: 'auto' }} />
+            {gameNumber && (
+              <span style={{ fontSize: 11, fontWeight: 700, color: theme.subtext, letterSpacing: 1.5, textTransform: 'uppercase' }}>
+                #{gameNumber}
               </span>
-              {gameNumber && (
-                <span style={{ fontSize: 11, fontWeight: 700, color: theme.subtext, letterSpacing: 1.5, textTransform: 'uppercase' }}>
-                  #{gameNumber} · {new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}
-                </span>
-              )}
-            </div>
+            )}
           </div>
           <div style={{ display: 'flex', gap: 10 }}>
             <button onClick={() => setIsDarkMode(!isDarkMode)} style={{
@@ -246,8 +241,8 @@ export default function App() {
             </div>
           )}
         </main>
-        {/* Ko-fi floating widget — desktop only */}
-        <div className="kofi-desktop"><KofiWidget /></div>
+        {/* Ko-fi floating widget — desktop only, not rendered on mobile */}
+        {typeof window !== 'undefined' && window.innerWidth >= 640 && <KofiWidget />}
 
         <footer style={{ width: '100%', borderTop: '3px solid #333', background: '#FFCC00',
           padding: '24px', textAlign: 'center', marginTop: 'auto' }}>
@@ -261,9 +256,9 @@ export default function App() {
           {/* Ko-fi footer link — mobile only */}
           <a href="https://ko-fi.com/josephjones1" target="_blank" rel="noopener noreferrer"
             className="kofi-mobile"
-            style={{ display: 'none', alignItems: 'center', gap: 6, background: '#fff',
-              color: '#333', borderRadius: 8, padding: '7px 14px', fontSize: 12, fontWeight: 700,
-              textDecoration: 'none', border: '2px solid #333' }}>
+            style={{ display: 'none', alignItems: 'center', gap: 6, background: '#5bc0de',
+              color: '#fff', borderRadius: 8, padding: '7px 14px', fontSize: 12, fontWeight: 700,
+              textDecoration: 'none', border: 'none' }}>
             ☕ Support on Ko-fi
           </a>
         </footer>

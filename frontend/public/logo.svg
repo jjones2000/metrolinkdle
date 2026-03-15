@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 80">
+  <defs>
+    <clipPath id="hexclip">
+      <polygon points="8,40 28,10 52,10 72,40 52,70 28,70"/>
+    </clipPath>
+  </defs>
+
+  <!-- Hex badge -->
+  <polygon points="8,40 28,10 52,10 72,40 52,70 28,70" fill="#FFCC00" stroke="#1A1A1A" stroke-width="2.5"/>
+  <g clip-path="url(#hexclip)">
+    <rect x="8" y="22" width="64" height="10" fill="#1A1A1A" opacity="0.2"/>
+    <rect x="8" y="45" width="64" height="10" fill="#1A1A1A" opacity="0.2"/>
+  </g>
+  <text x="40" y="50" text-anchor="middle" font-family="'Bebas Neue', Impact, sans-serif" font-size="38" fill="#1A1A1A">M</text>
+
+  <!-- Wordmark -->
+  <text x="88" y="52" font-family="'Bebas Neue', Impact, sans-serif" font-size="46" letter-spacing="2" fill="#1A1A1A">METROLINK<tspan fill="#FFCC00">DLE</tspan></text>
+
+  <!-- Line colour dots -->
+  <circle cx="90"  cy="66" r="4" fill="#F9A100"/>
+  <circle cx="102" cy="66" r="4" fill="#7B2FBE"/>
+  <circle cx="114" cy="66" r="4" fill="#3C8BC4"/>
+  <circle cx="126" cy="66" r="4" fill="#D4006A"/>
+  <circle cx="138" cy="66" r="4" fill="#0057A8"/>
+  <line x1="150" y1="66" x2="510" y2="66" stroke="#1A1A1A" stroke-width="1.5" opacity="0.15"/>
+</svg>
