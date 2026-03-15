@@ -36,7 +36,52 @@ function DistBar({ n, label, max, highlight }) {
   )
 }
 
-export function ResultModal({ won, guesses, targetStop, stats, onClose, onShare, gameNumber }) {
+function TodayComparison({ dailyStats, won, guesses }) {
+  if (!dailyStats || dailyStats.total_players < 2) return null
+
+  const total = dailyStats.total_players
+  const dist  = dailyStats.guess_distribution || {}
+  const maxD  = Math.max(...Object.values(dist).map(Number), 1)
+  const n     = guesses.length
+
+  // How many players did better (fewer guesses, won)
+  let betterCount = 0
+  if (won) {
+    for (let i = 1; i < n; i++) betterCount += (dist[String(i)] || 0)
+  }
+  const percentile = won
+    ? Math.round((1 - betterCount / total) * 100)
+    : null
+
+  return (
+    <div style={{ borderTop: '1px solid #383838', marginTop: 10, paddingTop: 10 }}>
+      <div style={{ fontSize: 9, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 1, color: '#888', marginBottom: 6, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <span>Today's Players</span>
+        <span style={{ color: '#555' }}>{total} {total === 1 ? 'player' : 'players'}</span>
+      </div>
+
+      {/* Global guess distribution */}
+      {Array.from({ length: MAX_GUESSES }, (_, i) => i + 1).map(i => (
+        <DistBar key={i} n={dist[String(i)] || 0} label={i} max={maxD} highlight={won && n === i} />
+      ))}
+
+      {/* Summary line */}
+      <div style={{ marginTop: 8, fontSize: 10, color: '#888', textAlign: 'center' }}>
+        {won
+          ? <>
+              Avg solve: <span style={{ color: '#FFCC00', fontWeight: 700 }}>{dailyStats.average_guesses} guesses</span>
+              {percentile !== null && percentile >= 50 && (
+                <> · Top <span style={{ color: '#FFCC00', fontWeight: 700 }}>{100 - percentile}%</span> today</>
+              )}
+            </>
+          : <>{Math.round(dailyStats.win_rate)}% of players solved today's puzzle</>
+        }
+      </div>
+    </div>
+  )
+}
+
+export function ResultModal({ won, guesses, targetStop, stats, dailyStats, onClose, onShare, gameNumber }) {
   const n     = guesses.length
   const emoji = won
     ? <img src={WIN_EMOJI_IMGS[n - 1].url} alt={WIN_EMOJI_IMGS[n - 1].emoji} height={26} />
@@ -53,7 +98,7 @@ export function ResultModal({ won, guesses, targetStop, stats, onClose, onShare,
 
       <div style={{ background: '#1E1E1E', border: '2px solid #383838', borderRadius: 18,
         padding: 'clamp(12px, 2.5vw, 18px)', maxWidth: 370, width: '100%', position: 'relative',
-        maxHeight: 'calc(100vh - 20px)', boxSizing: 'border-box',
+        maxHeight: 'calc(100vh - 20px)', overflowY: 'auto', boxSizing: 'border-box',
         animation: 'popIn .3s cubic-bezier(.34,1.56,.64,1)' }}>
 
         <button onClick={onClose} style={{ position: 'absolute', top: 10, right: 10, background: '#2A2A2A',
@@ -81,7 +126,7 @@ export function ResultModal({ won, guesses, targetStop, stats, onClose, onShare,
           </div>
         </div>
 
-        {/* Stats */}
+        {/* Personal stats */}
         {stats && (<>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 5, marginBottom: 10 }}>
             <StatBox value={stats.games_played}   label="Played" />
@@ -90,12 +135,15 @@ export function ResultModal({ won, guesses, targetStop, stats, onClose, onShare,
             <StatBox value={stats.max_streak}     label="Best" />
           </div>
           <div style={{ fontSize: 9, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 1, color: '#888', marginBottom: 5 }}>
-            Guess Distribution
+            Your Guess Distribution
           </div>
           {Array.from({ length: MAX_GUESSES }, (_, i) => i + 1).map(i => (
             <DistBar key={i} n={dist[String(i)] || 0} label={i} max={maxDist} highlight={won && n === i} />
           ))}
         </>)}
+
+        {/* Today vs other players */}
+        <TodayComparison dailyStats={dailyStats} won={won} guesses={guesses} />
 
         {/* Actions */}
         <div style={{ display: 'flex', gap: 8, marginTop: 10 }}>

@@ -58,3 +58,11 @@ export async function postGameResult(result) {
 export async function fetchPlayerStats(playerId) {
   return request(`/api/stats/${playerId}`)
 }
+
+/**
+ * Fetch aggregated stats for all players on a given date.
+ * Returns { date, total_players, win_rate, guess_distribution, average_guesses }
+ */
+export async function fetchDailyStats(isoDate) {
+  return request(`/api/daily-stats/${isoDate}`)
+}

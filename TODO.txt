@@ -1,6 +1,6 @@
 METROLINKDLE TODO
 
-[ ] Revert all emojis back to android copied in, todo this search for all .png 
+[X] (completed 15/03/2026) Revert all emojis back to android copied in, todo this search for all .png 
 [ ] shadows on all boxes?
 [ ] new game -> close, after winning/losing
 [X] update image links to get rid of /public/

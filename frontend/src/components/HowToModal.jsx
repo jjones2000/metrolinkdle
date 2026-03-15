@@ -1,17 +1,13 @@
 // 1. Define your PNG paths (Update these URLs to your actual hosted images)
 const EMOJI = {
-  GREEN: './large-green-circle_1f7e2.png',
-  YELLOW: './large-yellow-circle_1f7e1.png',
-  RED: './large-red-circle_1f534.png'
+  GREEN: '🟢',
+  YELLOW: '🟡',
+  RED: '🔴'
 };
 
 // 2. Small helper component to keep the list clean
 const StatusIcon = ({ src }) => (
-  <img
-    src={src}
-    alt="status"
-    style={{ width: 18, height: 18, verticalAlign: 'middle', margin: '0 4px' }}
-  />
+  <span style={{ fontSize: 15, verticalAlign: 'middle', margin: '0 4px' }}>{src}</span>
 );
 
 export function HowToModal({ onClose }) {

@@ -12,8 +12,6 @@ const LINE_ORDER = [
   'MediaCity Spur','Piccadilly Spur',
 ]
 
-const PIN_URL = "./round-pushpin_1f4cd.png";
-const CIRCLE_URL = "./doughnut_1f369.png";
 const BEE_URL = "./honeybee.png"
 
 
@@ -307,8 +305,8 @@ export function NetworkMap({ guesses, targetStop, revealTarget, isDarkMode }) {
     containerBg: isDarkMode ? '#1E1E1E' : '#F8F8F8',
     border:      isDarkMode ? '#383838' : '#E0E0E0',
     text:        isDarkMode ? '#888'    : '#666',
-    dotDefault:  isDarkMode ? '#3a5060' : '#BCC7CC',
-    dotStroke:   isDarkMode ? '#556'    : '#96A4AA',
+    dotDefault:  isDarkMode ? '#6B8A9A' : '#BCC7CC',
+    dotStroke:   isDarkMode ? '#8AAABB' : '#96A4AA',
     tooltipBg:   isDarkMode ? '#1A1A1A' : '#FFFFFF',
     tooltipText: isDarkMode ? '#FFFFFF' : '#222222',
   }
@@ -379,14 +377,14 @@ const stopsWithPos = ALL_STOPS.map(stop => {
   [
     'geo', 
     <>
-      <img src={PIN_URL} alt="Pin" style={{ width: 16, height: 16, marginBottom: 4, verticalAlign: 'middle' }} />
+      <span style={{ fontSize: 14, verticalAlign: 'middle' }}>📍</span>
       <span> Geographic</span>
     </>
   ],
   [
     'topo', 
     <>
-      <img src={CIRCLE_URL} alt="Topological" style={{ width: 16, height: 16, marginBottom: 4, verticalAlign: 'middle' }} />
+      <span style={{ fontSize: 14, verticalAlign: 'middle' }}>🍩</span>
       <span> Topological</span>
     </>
   ]

@@ -12,10 +12,7 @@ import KofiWidget from './components/KofiWidget';
 
 const APPLE_BEE_URL = "./honeybee.png";
 
-const MODE = {
-  SUN : "./sun_2600-fe0f.png",
-  MOON : "./crescent-moon_1f319.png"
-}
+
 
 // 2. Small helper component to keep the list clean
 const ModeIcon = ({ src }) => (
@@ -76,7 +73,7 @@ function LoadingScreen({ error }) {
 export default function App() {
   const playerId = usePlayerId()
   const { targetStop: targetName, gameNumber, loading, error } = useDaily()
-  const { stats, recordResult } = useStats(playerId)
+  const { stats, dailyStats, recordResult } = useStats(playerId)
 
   const [isDarkMode, setIsDarkMode] = useState(false)
   const targetStop = targetName ? STOPS[targetName] : null
@@ -192,7 +189,7 @@ export default function App() {
                 background: theme.card, border: '2.5px solid #333', borderRadius: 10, width: 40, height: 40,
                 cursor: 'pointer', fontSize: 18, display: 'flex', alignItems: 'center', justifyContent: 'center',
                 boxShadow: '3px 3px 0 #333'
-              }}>{isDarkMode ? <ModeIcon src={MODE.SUN} /> : <ModeIcon src={MODE.MOON} />}</button>
+              }}>{isDarkMode ? '☀️' : '🌙'}</button>
             <button onClick={() => setShowHowTo(true)} style={{
                 background: theme.card, border: '2.5px solid #333', borderRadius: 10, width: 40, height: 40,
                 cursor: 'pointer', fontSize: 18, fontWeight: 900, boxShadow: '3px 3px 0 #333'
@@ -257,7 +254,7 @@ export default function App() {
 
       {showHowTo && <HowToModal onClose={() => setShowHowTo(false)} isDarkMode={isDarkMode} />}
       {showResult && targetStop && (
-        <ResultModal won={won} guesses={guesses} targetStop={targetStop} stats={stats} onClose={() => setShowResult(false)} onShare={handleShare} gameNumber={gameNumber} isDarkMode={isDarkMode} />
+        <ResultModal won={won} guesses={guesses} targetStop={targetStop} stats={stats} dailyStats={dailyStats} onClose={() => setShowResult(false)} onShare={handleShare} gameNumber={gameNumber} isDarkMode={isDarkMode} />
       )}
       <Toast message={toast.msg} show={toast.show} />
     </>

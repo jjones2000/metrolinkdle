@@ -1,25 +1,11 @@
-/**
- * useStats.js
- * -----------
- * Fetches player stats from the backend on mount and exposes a
- * `recordResult` function to post a completed game.
- */
 import { useState, useEffect, useCallback } from 'react'
-import { fetchPlayerStats, postGameResult } from '../api'
+import { fetchPlayerStats, postGameResult, fetchDailyStats } from '../api'
 
-/**
- * @param {string} playerId  - from usePlayerId()
- * @returns {{
- *   stats: object|null,
- *   statsLoading: boolean,
- *   recordResult: (result: object) => Promise<void>
- * }}
- */
 export function useStats(playerId) {
   const [stats,        setStats]        = useState(null)
+  const [dailyStats,   setDailyStats]   = useState(null)
   const [statsLoading, setStatsLoading] = useState(true)
 
-  // Fetch on mount
   useEffect(() => {
     if (!playerId) return
     fetchPlayerStats(playerId)
@@ -27,7 +13,6 @@ export function useStats(playerId) {
       .catch(err  => { console.warn('Stats fetch failed:', err); setStatsLoading(false) })
   }, [playerId])
 
-  // Post a result and refresh stats
   const recordResult = useCallback(async ({ date, won, guesses, targetStop }) => {
     try {
       await postGameResult({
@@ -37,14 +22,17 @@ export function useStats(playerId) {
         guesses,
         target_stop: targetStop,
       })
-      // Refresh stats after recording
-      const fresh = await fetchPlayerStats(playerId)
+      // Refresh both player stats and today's global stats
+      const [fresh, daily] = await Promise.all([
+        fetchPlayerStats(playerId),
+        fetchDailyStats(date),
+      ])
       setStats(fresh)
+      setDailyStats(daily)
     } catch (err) {
-      // Non-fatal — stats are nice-to-have, not game-breaking
       console.warn('Failed to record result:', err)
     }
   }, [playerId])
 
-  return { stats, statsLoading, recordResult }
+  return { stats, dailyStats, statsLoading, recordResult }
 }

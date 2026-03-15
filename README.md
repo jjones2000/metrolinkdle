@@ -33,17 +33,8 @@ metrolinkdle/
 │   │       ├── ResultModal.jsx     ← end-of-game modal with stats + share
 │   │       ├── HowToModal.jsx      ← how to play instructions
 │   │       └── KofiWidget.js       ← Ko-fi donation button
-│   ├── public/                     ← static emoji PNG assets
-│   │   ├── honeybee.png
-│   │   ├── large-green-circle_1f7e2.png
-│   │   ├── large-yellow-circle_1f7e1.png
-│   │   ├── large-red-circle_1f534.png
-│   │   ├── direct-hit_1f3af.png
-│   │   ├── round-pushpin_1f4cd.png
-│   │   ├── doughnut_1f369.png
-│   │   ├── crescent-moon_1f319.png
-│   │   ├── sun_2600-fe0f.png
-│   │   └── ... (other emoji PNGs)
+│   ├── public/                     
+│   │
 │   ├── index.html
 │   ├── vite.config.js              ← proxies /api to localhost:8000 in dev
 │   ├── .env.development

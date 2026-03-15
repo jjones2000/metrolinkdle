@@ -1,6 +1,5 @@
 import { LINE_COLORS, evaluateGuess } from '../gameLogic'
-const CDN = 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14/assets/72x72'
-const TARGET_URL = `${CDN}/1f3af.png`
+
 
 export function GuessRow({ guessStop, targetStop, isDarkMode, animDelay = 0 }) {
   const ev = evaluateGuess(guessStop, targetStop)
@@ -87,7 +86,7 @@ export function GuessRow({ guessStop, targetStop, isDarkMode, animDelay = 0 }) {
       {/* Direction */}
       <Cell status={ev.dist === 0 ? 'correct' : 'wrong'}>
         <div style={{ fontSize: 24, color: getColors(ev.dist === 0 ? 'correct' : 'wrong').text, transform: `rotate(${ev.deg}deg)`, display: 'inline-block' }}>
-          {ev.dist === 0 ? <img src={TARGET_URL} alt="target" height={32}/> : '↑'}
+          {ev.dist === 0 ? <span style={{fontSize:18}}>🎯</span> : '↑'}
         </div>
       </Cell>
 
