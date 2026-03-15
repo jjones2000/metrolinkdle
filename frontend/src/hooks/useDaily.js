@@ -3,53 +3,44 @@
  * -----------
  * Fetches the daily target stop from the FastAPI backend.
  *
- * Caches the result in sessionStorage so we only hit the API once per
- * browser session (not once per re-render).  The cache is keyed by date
- * so it automatically refreshes at midnight.
+ * Uses localStorage (not sessionStorage) so the cached stop survives
+ * page refreshes. Cache is keyed by date so it auto-invalidates at midnight.
+ * The game will load instantly from cache on refresh while silently
+ * revalidating in the background.
  */
 import { useState, useEffect } from 'react'
 import { fetchDailyStop } from '../api'
 
 const CACHE_KEY = 'metrolinkdle_daily_cache'
+const TODAY = new Date().toISOString().slice(0, 10)
 
 function getCached() {
   try {
-    const raw = sessionStorage.getItem(CACHE_KEY)
+    const raw = localStorage.getItem(CACHE_KEY)
     if (!raw) return null
     const { date, stop, game_number } = JSON.parse(raw)
-    // Invalidate if the cached date is not today, or if game_number is missing
-    if (date === new Date().toISOString().slice(0, 10) && game_number) {
-      return { stop, game_number }
-    }
-  } catch {
-    // ignore parse errors
-  }
+    if (date === TODAY && stop && game_number) return { stop, game_number }
+  } catch {}
   return null
 }
 
 function setCache(date, stop, game_number) {
   try {
-    sessionStorage.setItem(CACHE_KEY, JSON.stringify({ date, stop, game_number }))
-  } catch {
-    // ignore storage errors (private browsing quota)
-  }
+    localStorage.setItem(CACHE_KEY, JSON.stringify({ date, stop, game_number }))
+  } catch {}
 }
 
-/**
- * @returns {{ targetStop: string|null, gameNumber: number|null, loading: boolean, error: string|null }}
- */
 export function useDaily() {
   const cached = getCached()
   const [targetStop, setTargetStop] = useState(cached?.stop || null)
   const [gameNumber, setGameNumber] = useState(cached?.game_number || null)
+  // Only show loading screen if we have nothing cached at all
   const [loading,    setLoading]    = useState(!cached)
   const [error,      setError]      = useState(null)
 
   useEffect(() => {
-    if (targetStop && gameNumber) return
-
+    // Always fetch in background to revalidate, but only block UI if no cache
     let cancelled = false
-
     fetchDailyStop()
       .then(data => {
         if (cancelled) return
@@ -60,13 +51,14 @@ export function useDaily() {
       })
       .catch(err => {
         if (cancelled) return
-        console.error('Failed to fetch daily stop:', err)
-        setError(err.message)
+        // If we have cached data, don't show an error — just use the cache
+        if (!cached) {
+          setError(err.message)
+        }
         setLoading(false)
       })
-
     return () => { cancelled = true }
-  }, [targetStop, gameNumber])
+  }, [])
 
   return { targetStop, gameNumber, loading, error }
 }

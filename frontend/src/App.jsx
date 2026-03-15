@@ -8,6 +8,7 @@ import { usePlayerId } from './hooks/usePlayerId'
 import { useDaily }    from './hooks/useDaily'
 import { useStats }    from './hooks/useStats'
 import { STOPS, MAX_GUESSES, buildShareText } from './gameLogic'
+import { useGameState } from './hooks/useGameState'
 import KofiWidget from './components/KofiWidget';
 
 const APPLE_BEE_URL = "./honeybee.png";
@@ -78,11 +79,14 @@ export default function App() {
   const [isDarkMode, setIsDarkMode] = useState(false)
   const targetStop = targetName ? STOPS[targetName] : null
 
-  const [guesses,      setGuesses]      = useState([])
-  const [gameOver,     setGameOver]     = useState(false)
-  const [won,          setWon]          = useState(false)
-  const [revealTarget, setRevealTarget] = useState(false)
-  const [showResult,   setShowResult]   = useState(false)
+  const {
+    guesses, setGuesses,
+    gameOver, setGameOver,
+    won, setWon,
+    revealTarget, setRevealTarget,
+  } = useGameState()
+  // Show result modal automatically if game was already completed today
+  const [showResult, setShowResult] = useState(gameOver)
   const [showHowTo,    setShowHowTo]    = useState(false)
   const [toast,        setToast]        = useState({ msg: '', show: false })
 
