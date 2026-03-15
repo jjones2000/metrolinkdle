@@ -9,7 +9,7 @@ import { useDaily }    from './hooks/useDaily'
 import { useStats }    from './hooks/useStats'
 import { STOPS, MAX_GUESSES, buildShareText } from './gameLogic'
 import { useGameState } from './hooks/useGameState'
-import KofiWidget from './components/KofiWidget';
+import KofiWidget from './components/KofiWidget'
 
 const APPLE_BEE_URL = "./honeybee.png";
 
@@ -168,6 +168,10 @@ export default function App() {
           overflow: hidden;
           border-radius: 18px;
         }
+        @media (max-width: 640px) {
+          .kofi-desktop { display: none !important; }
+          .kofi-mobile  { display: inline-flex !important; }
+        }
       `}</style>
 
       <div className="honeycomb-bg" style={{ color: theme.text, fontFamily: "'DM Sans',sans-serif", display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -242,7 +246,8 @@ export default function App() {
             </div>
           )}
         </main>
-       <KofiWidget />
+        {/* Ko-fi floating widget — desktop only */}
+        <div className="kofi-desktop"><KofiWidget /></div>
 
         <footer style={{ width: '100%', borderTop: '3px solid #333', background: '#FFCC00',
           padding: '24px', textAlign: 'center', marginTop: 'auto' }}>
@@ -250,9 +255,17 @@ export default function App() {
           <p style={{ fontFamily: "'Bebas Neue',cursive", fontSize: 16, color: '#333', letterSpacing: 1, marginBottom: 2 }}>
             {gameNumber ? `Metrolinkdle #${gameNumber}` : 'Metrolinkdle'}
           </p>
-          <p style={{ fontSize: 11, fontWeight: 700, color: '#333', letterSpacing: 0.5 }}>
+          <p style={{ fontSize: 11, fontWeight: 700, color: '#333', letterSpacing: 0.5, marginBottom: 10 }}>
             Bee Network Fan Project • Data © TfGM
           </p>
+          {/* Ko-fi footer link — mobile only */}
+          <a href="https://ko-fi.com/josephjones1" target="_blank" rel="noopener noreferrer"
+            className="kofi-mobile"
+            style={{ display: 'none', alignItems: 'center', gap: 6, background: '#fff',
+              color: '#333', borderRadius: 8, padding: '7px 14px', fontSize: 12, fontWeight: 700,
+              textDecoration: 'none', border: '2px solid #333' }}>
+            ☕ Support on Ko-fi
+          </a>
         </footer>
       </div>
 

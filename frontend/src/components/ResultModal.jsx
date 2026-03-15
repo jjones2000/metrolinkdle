@@ -13,8 +13,8 @@ const SAD_URL = e('1f614')
 
 function StatBox({ value, label }) {
   return (
-    <div style={{ background: '#2A2A2A', border: '1px solid #383838', borderRadius: 8, padding: '7px 4px', textAlign: 'center' }}>
-      <div style={{ fontFamily: "'Bebas Neue',cursive", fontSize: 'clamp(16px, 4vw, 22px)', color: '#FFCC00', lineHeight: 1 }}>{value}</div>
+    <div style={{ background: '#2A2A2A', border: '1px solid #383838', borderRadius: 6, padding: '5px 3px', textAlign: 'center' }}>
+      <div style={{ fontFamily: "'Bebas Neue',cursive", fontSize: 18, color: '#FFCC00', lineHeight: 1 }}>{value}</div>
       <div style={{ fontSize: 9, color: '#888', textTransform: 'uppercase', letterSpacing: '.5px', marginTop: 2, lineHeight: 1.2 }}>{label}</div>
     </div>
   )
@@ -91,13 +91,13 @@ export function ResultModal({ won, guesses, targetStop, stats, dailyStats, onClo
   const maxDist = Math.max(...Object.values(dist).map(Number), 1)
 
   return (
-    <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,.75)', zIndex: 200,
-      display: 'flex', alignItems: 'center', justifyContent: 'center',
-      padding: '10px 14px', backdropFilter: 'blur(3px)' }}
+    <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,.75)', zIndex: 1100,
+      display: 'flex', alignItems: 'flex-start', justifyContent: 'center',
+      padding: '78px 14px 14px', overflowY: 'auto', backdropFilter: 'blur(3px)' }}
       onClick={ev => ev.target === ev.currentTarget && onClose()}>
 
       <div style={{ background: '#1E1E1E', border: '2px solid #383838', borderRadius: 18,
-        padding: 'clamp(12px, 2.5vw, 18px)', maxWidth: 370, width: '100%', position: 'relative',
+        padding: '12px 14px', maxWidth: 340, width: '100%', position: 'relative',
         maxHeight: 'calc(100vh - 20px)', overflowY: 'auto', boxSizing: 'border-box',
         animation: 'popIn .3s cubic-bezier(.34,1.56,.64,1)' }}>
 
@@ -106,17 +106,17 @@ export function ResultModal({ won, guesses, targetStop, stats, dailyStats, onClo
           cursor: 'pointer', fontSize: 13, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>✕</button>
 
         {/* Header */}
-        <div style={{ textAlign: 'center', paddingBottom: 10, borderBottom: '1px solid #383838', marginBottom: 10 }}>
-          <div style={{ marginBottom: 3 }}>{emoji}</div>
-          <div style={{ fontFamily: "'Bebas Neue',cursive", fontSize: 'clamp(20px, 5vw, 26px)', letterSpacing: 3, color: '#FFCC00' }}>{title}</div>
+        <div style={{ textAlign: 'center', paddingBottom: 7, borderBottom: '1px solid #383838', marginBottom: 7 }}>
+          <div style={{ marginBottom: 2 }}>{emoji}</div>
+          <div style={{ fontFamily: "'Bebas Neue',cursive", fontSize: 22, letterSpacing: 3, color: '#FFCC00' }}>{title}</div>
           {gameNumber && (
-            <div style={{ fontSize: 10, color: '#888', letterSpacing: 1.5, textTransform: 'uppercase', marginTop: 2 }}>
+            <div style={{ fontSize: 9, color: '#888', letterSpacing: 1.5, textTransform: 'uppercase', marginTop: 1 }}>
               Puzzle #{gameNumber}
             </div>
           )}
-          <div style={{ background: '#FFCC00', color: '#000', borderRadius: 10, padding: '7px 14px', margin: '7px 0' }}>
-            <div style={{ fontSize: 9, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 1, opacity: .6, marginBottom: 1 }}>Today's stop was</div>
-            <div style={{ fontFamily: "'Bebas Neue',cursive", fontSize: 'clamp(16px, 4vw, 20px)', letterSpacing: 2 }}>{targetStop.name}</div>
+          <div style={{ background: '#FFCC00', color: '#000', borderRadius: 8, padding: '5px 12px', margin: '5px 0' }}>
+            <div style={{ fontSize: 8, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 1, opacity: .6, marginBottom: 1 }}>Today's stop was</div>
+            <div style={{ fontFamily: "'Bebas Neue',cursive", fontSize: 17, letterSpacing: 2 }}>{targetStop.name}</div>
           </div>
           <div style={{ display: 'flex', gap: 4, justifyContent: 'center', flexWrap: 'wrap' }}>
             {targetStop.lines.map(ln => (
@@ -128,7 +128,7 @@ export function ResultModal({ won, guesses, targetStop, stats, dailyStats, onClo
 
         {/* Personal stats */}
         {stats && (<>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 5, marginBottom: 10 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 4, marginBottom: 7 }}>
             <StatBox value={stats.games_played}   label="Played" />
             <StatBox value={`${stats.win_rate}%`} label="Win %" />
             <StatBox value={stats.current_streak} label="Streak" />
@@ -146,7 +146,7 @@ export function ResultModal({ won, guesses, targetStop, stats, dailyStats, onClo
         <TodayComparison dailyStats={dailyStats} won={won} guesses={guesses} />
 
         {/* Actions */}
-        <div style={{ display: 'flex', gap: 8, marginTop: 10 }}>
+        <div style={{ display: 'flex', gap: 6, marginTop: 8 }}>
           <button onClick={onShare} style={{ flex: 1, padding: '9px 4px', background: '#FFCC00', color: '#000',
             border: 'none', borderRadius: 8, fontFamily: "'Bebas Neue',cursive", fontSize: 17,
             letterSpacing: 2, cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 5 }}>
