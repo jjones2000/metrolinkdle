@@ -2,16 +2,15 @@ METROLINKDLE TODO
 
 [X] (completed 15/03/2026) Revert all emojis back to android copied in, todo this search for all .png 
 [ ] shadows on all boxes?
-[ ] new game -> close, after winning/losing
+[X] new game -> close, after winning/losing
 [X] update image links to get rid of /public/
-[ ] update colours of lines
-[ ] remove Piccadilly Spur
-[ ] remove Second City Crossing
-[ ] check the readme and write better documentation
+[X] update colours of lines
+[X] remove Piccadilly Spur
+[X] remove Second City Crossing
+[ ] check the README and write better documentation
 [ ] Trafford Palazzo is called Barton Dock Road
-[ ] put circles around lines on guesses to make colours stand out.
+[X] put circles around lines on guesses to make colours stand out.
 [ ] possibly alter colours of edges with multiple lines on
-
 
 
 TOPO_STOPS COMPLETED
