@@ -1,10 +1,12 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { ALL_STOPS, LINE_COLORS } from '../gameLogic'
 
 export function StopSearch({ onSelect, disabled, excluded = new Set(), isDarkMode }) {
   const [query,   setQuery]   = useState('')
   const [focused, setFocused] = useState(false)
   const [hiIdx,   setHiIdx]   = useState(0)
+  const inputRef = useRef(null)
+  const choosingRef = useRef(false)
 
   // Dynamic Theme Colors
   const colors = {
@@ -20,12 +22,17 @@ export function StopSearch({ onSelect, disabled, excluded = new Set(), isDarkMod
     .slice(0, 8)
 
   function choose(stop) {
-    // 1. Clear the query immediately
+    choosingRef.current = true
     setQuery('')
-    setFocused(false)
     setHiIdx(0)
-    // 2. Trigger the guess in App.jsx
     onSelect(stop)
+    setTimeout(() => {
+      choosingRef.current = false
+      if (inputRef.current) {
+        inputRef.current.focus()
+        setFocused(true)
+      }
+    }, 10)
   }
 
   function handleKey(e) {
@@ -46,10 +53,11 @@ export function StopSearch({ onSelect, disabled, excluded = new Set(), isDarkMod
   return (
     <div style={{ width: '100%', position: 'relative' }}>
       <input
+        ref={inputRef}
         value={query}
         onChange={handleChange}
         onFocus={() => setFocused(true)}
-        onBlur={() => setTimeout(() => setFocused(false), 150)}
+        onBlur={() => setTimeout(() => { if (!choosingRef.current) setFocused(false) }, 150)}
         onKeyDown={handleKey}
         disabled={disabled}
         placeholder="Search for a station..."
