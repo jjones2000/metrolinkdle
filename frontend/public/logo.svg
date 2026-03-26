@@ -7,11 +7,23 @@
 
   <!-- Hex badge -->
   <polygon points="8,40 28,10 52,10 72,40 52,70 28,70" fill="#FFCC00" stroke="#1A1A1A" stroke-width="2.5"/>
+
+  <!-- Mini network map inside hex -->
   <g clip-path="url(#hexclip)">
-    <rect x="8" y="22" width="64" height="10" fill="#1A1A1A" opacity="0.2"/>
-    <rect x="8" y="45" width="64" height="10" fill="#1A1A1A" opacity="0.2"/>
+    <line x1="40" y1="18" x2="40" y2="62" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="18" y1="40" x2="62" y2="40" stroke="#1A1A1A" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="22" y1="22" x2="58" y2="58" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+    <line x1="58" y1="22" x2="22" y2="58" stroke="#1A1A1A" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="40" cy="40" r="6" fill="#FFCC00" stroke="#1A1A1A" stroke-width="2.5"/>
+    <circle cx="40" cy="20" r="3.5" fill="#1A1A1A"/>
+    <circle cx="40" cy="60" r="3.5" fill="#1A1A1A"/>
+    <circle cx="20" cy="40" r="3.5" fill="#1A1A1A"/>
+    <circle cx="60" cy="40" r="3.5" fill="#1A1A1A"/>
+    <circle cx="24" cy="24" r="3" fill="#1A1A1A"/>
+    <circle cx="56" cy="56" r="3" fill="#1A1A1A"/>
+    <circle cx="56" cy="24" r="3" fill="#1A1A1A"/>
+    <circle cx="24" cy="56" r="3" fill="#1A1A1A"/>
   </g>
-  <text x="40" y="50" text-anchor="middle" font-family="'Bebas Neue', Impact, sans-serif" font-size="38" fill="#1A1A1A">M</text>
 
   <!-- Wordmark -->
   <text x="88" y="52" font-family="'Bebas Neue', Impact, sans-serif" font-size="46" letter-spacing="2" fill="#1A1A1A">METROLINK<tspan fill="#FFCC00">DLE</tspan></text>
